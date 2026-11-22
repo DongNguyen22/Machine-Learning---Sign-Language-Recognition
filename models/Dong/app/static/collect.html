@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghi mẫu ký hiệu</title>
+<style>
+  :root { --bg:#0f1115; --card:#191c22; --fg:#e8e8ea; --mut:#8b8f98; --ok:#3ecf8e; --warn:#f5a524; --bad:#f2555a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px; display:grid; gap:16px; grid-template-columns: 1fr 380px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .card { background:var(--card); border-radius:12px; padding:14px; }
+  .stage { position:relative; aspect-ratio: 4/3; background:#000; border-radius:12px; overflow:hidden; }
+  video, canvas { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scaleX(-1); }
+  #count { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:120px; font-weight:800; color:#fff; text-shadow:0 0 20px #000; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0; }
+  button, select, input { background:#2a2f39; color:var(--fg); border:0; border-radius:8px; padding:8px 12px; font-size:14px; }
+  button { cursor:pointer; } button.primary { background:var(--ok); color:#06140d; font-weight:600; }
+  button.danger { background:#4a2326; } input { width:80px; }
+  #big { font-size: 64px; font-weight: 800; text-align:center; }
+  #status { text-align:center; color:var(--mut); min-height: 40px; }
+  .grid { display:grid; grid-template-columns: repeat(6, 1fr); gap:6px; }
+  .cell { border-radius:8px; padding:6px 4px; text-align:center; cursor:pointer; background:#22262e; border:2px solid transparent; }
+  .cell b { display:block; font-size:18px; } .cell small { font-size:11px; color:var(--mut); }
+  .cell.sel { border-color: var(--fg); } .cell.done { background:#16382a; } .cell.part { background:#3b3016; }
+  ul { padding-left: 18px; color: var(--mut); font-size: 13px; line-height: 1.5; }
+  a { color: var(--ok); }
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <div class="stage"><video id="video" playsinline muted></video><canvas id="overlay"></canvas><div id="count"></div></div>
+    <div class="row">
+      <button class="primary" id="cam">Bật webcam</button>
+      Lớp <select id="label"></select>
+      Mã người <input id="person" type="number" value="101" min="100" max="9999" title="Mỗi người / mỗi buổi ghi dùng một mã khác nhau, từ 100 trở lên">
+      Số mẫu <input id="target" type="number" value="60" min="10" max="500">
+    </div>
+    <div class="row">
+      <button class="primary" id="rec">● Ghi (đếm ngược 3 giây)</button>
+      <button id="stop">■ Dừng</button>
+      <button id="next">Lớp kế tiếp →</button>
+      <button class="danger" id="clear">Xoá mẫu lớp này</button>
+      <a href="/collect/download"><button>⬇ Tải dữ liệu (.npz)</button></a>
+      <button id="saveDir" title="Chọn một thư mục trên máy, trang sẽ tạo trong đó folder asl_dataset_... (trình duyệt không hỗ trợ thì tải .zip)">📁 Lưu dataset vào thư mục</button>
+      <a href="/">← Trang nhận diện</a>
+    </div>
+    <ul>
+      <li>Trong lúc ghi, <b>thay đổi tư thế liên tục</b>: xoay cổ tay nhẹ, đưa tay gần/xa camera, dịch sang trái/phải, đổi tay trái/phải.</li>
+      <li>Ưu tiên các lớp model đang sai (ô có số đỏ "sai"). Mỗi lớp nên có 60–100 mẫu.</li>
+      <li>Nên ghi ở 2 buổi khác nhau (ánh sáng, phông nền, áo khác) với 2 mã người khác nhau, ví dụ 101 và 102. Notebook sẽ lấy buổi sau để kiểm tra.</li>
+      <li>Chỉ lưu toạ độ điểm khớp tay, không lưu ảnh.</li>
+    </ul>
+  </section>
+  <aside class="card">
+    <div id="big">–</div>
+    <div id="status">Bật webcam, chọn lớp rồi bấm Ghi</div>
+    <hr style="border-color:#2a2f39">
+    <div class="row" style="justify-content:space-between"><b>Số mẫu đã ghi</b><small id="total"></small></div>
+    <div class="grid" id="grid"></div>
+    <p><small>Số trên = số mẫu đã ghi · "sai" = số mẫu mà model hiện tại đoán sai lúc ghi</small></p>
+  </aside>
+</main>
+<script>
+const INTERVAL_MS = 150;
+const EDGES = [[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],
+               [9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+const $ = id => document.getElementById(id);
+const video = $("video"), overlay = $("overlay"), ctx = overlay.getContext("2d"), grab = document.createElement("canvas");
+let labels = [], recording = false, stats = { counts: {}, wrong_when_recorded: {} };
+
+async function init() {
+  labels = await (await fetch("/labels")).json();
+  $("label").innerHTML = labels.map(l => `<option>${l}</option>`).join("");
+  await refresh();
+}
+async function refresh() {
+  stats = await (await fetch("/collect/stats")).json();
+  const target = +$("target").value, sel = $("label").value;
+  $("total").textContent = `${stats.total} mẫu · người ${stats.people.join(", ") || "–"}`;
+  $("grid").innerHTML = labels.map(l => {
+    const n = stats.counts[l] || 0, w = stats.wrong_when_recorded[l] || 0;
+    const cls = (l === sel ? "sel " : "") + (n >= target ? "done" : n ? "part" : "");
+    return `<div class="cell ${cls}" data-l="${l}"><b>${l}</b><small>${n}</small>` +
+           (w ? `<small style="color:var(--bad)"> · sai ${w}</small>` : "") + `</div>`;
+  }).join("");
+  document.querySelectorAll(".cell").forEach(c => c.onclick = () => { $("label").value = c.dataset.l; refresh(); });
+}
+$("label").onchange = refresh; $("target").onchange = refresh;
+
+$("cam").onclick = async () => {
+  try {
+    video.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+    await video.play();
+  } catch (e) { alert("Không mở được webcam: " + e.message); }
+};
+$("stop").onclick = () => { recording = false; };
+$("next").onclick = () => { const i = labels.indexOf($("label").value); $("label").value = labels[(i + 1) % labels.length]; refresh(); };
+$("clear").onclick = async () => {
+  const l = $("label").value;
+  if (!confirm(`Xoá toàn bộ mẫu của lớp ${l} (mọi mã người)?`)) return;
+  const fd = new FormData(); fd.append("label", l);
+  await fetch("/collect/clear", { method: "POST", body: fd }); refresh();
+};
+
+$("saveDir").onclick = async () => {
+  if (!window.showDirectoryPicker) {                 // Firefox/Safari: tải zip chứa sẵn folder
+    location.href = "/collect/download/zip"; return;
+  }
+  let dir;
+  try { dir = await showDirectoryPicker({ id: "asl-dataset", mode: "readwrite" }); }
+  catch (e) { return; }                              // người dùng bấm Huỷ
+  try {
+    const res = await fetch("/collect/download/files");
+    if (!res.ok) throw new Error((await res.json()).detail || res.status);
+    const { folder, files } = await res.json();
+    const sub = await dir.getDirectoryHandle(folder, { create: true });
+    for (const [name, b64] of Object.entries(files)) {
+      const bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+      const w = await (await sub.getFileHandle(name, { create: true })).createWritable();
+      await w.write(bytes); await w.close();
+    }
+    $("status").innerHTML = `Đã lưu <b>${Object.keys(files).length} file</b> vào thư mục <b>${dir.name}/${folder}</b>`;
+  } catch (e) { alert("Lưu thất bại: " + e.message); }
+};
+
+$("rec").onclick = async () => {
+  if (recording || video.readyState < 2) { if (video.readyState < 2) alert("Bật webcam trước"); return; }
+  recording = true;
+  const label = $("label").value, person = $("person").value, target = +$("target").value;
+  $("big").textContent = label; $("big").style.color = "var(--fg)";
+  for (let s = 3; s > 0 && recording; s--) { $("count").textContent = s; await sleep(1000); }
+  $("count").textContent = "";
+  let saved = 0, correct = 0, tries = 0;
+  while (recording && saved < target) {
+    const t0 = performance.now(); tries++;
+    try {
+      const j = await send(label, person);
+      draw(j.landmarks || []);
+      if (j.saved) { saved++; if (j.pred === label) correct++; }
+      $("status").innerHTML = j.num_hands
+        ? `Đã lưu <b>${saved}/${target}</b> · model đoán <b style="color:${j.pred === label ? "var(--ok)" : "var(--bad)"}">${j.pred}</b> (${(j.conf * 100).toFixed(0)}%)`
+        : `Đã lưu <b>${saved}/${target}</b> · <span style="color:var(--warn)">không thấy tay</span>`;
+    } catch (e) { $("status").textContent = "Lỗi: " + e.message; recording = false; }
+    await sleep(Math.max(0, INTERVAL_MS - (performance.now() - t0)));
+  }
+  recording = false;
+  if (saved) $("status").innerHTML += `<br>Xong lớp ${label}: model hiện tại đoán đúng ${correct}/${saved} (${Math.round(100 * correct / saved)}%)`;
+  refresh();
+};
+
+async function send(label, person) {
+  grab.width = video.videoWidth; grab.height = video.videoHeight;
+  grab.getContext("2d").drawImage(video, 0, 0);
+  const blob = await new Promise(r => grab.toBlob(r, "image/jpeg", 0.85));
+  const fd = new FormData(); fd.append("file", blob, "f.jpg"); fd.append("label", label); fd.append("person", person);
+  const res = await fetch("/collect/sample", { method: "POST", body: fd });
+  if (!res.ok) throw new Error((await res.json()).detail || res.status);
+  return res.json();
+}
+function draw(hands) {
+  overlay.width = video.videoWidth || 640; overlay.height = video.videoHeight || 480;
+  const W = overlay.width, H = overlay.height; ctx.clearRect(0, 0, W, H);
+  hands.forEach((h, i) => {
+    ctx.strokeStyle = i ? "#f5a524" : "#3ecf8e"; ctx.lineWidth = 3;
+    EDGES.forEach(([a, b]) => { ctx.beginPath(); ctx.moveTo(h[a][0]*W, h[a][1]*H); ctx.lineTo(h[b][0]*W, h[b][1]*H); ctx.stroke(); });
+  });
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+init();
+</script>
+</body>
+</html>

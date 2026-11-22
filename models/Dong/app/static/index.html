@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASL-HG demo</title>
+<style>
+  :root { --bg:#0f1115; --card:#191c22; --fg:#e8e8ea; --mut:#8b8f98; --ok:#3ecf8e; --warn:#f5a524; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  main { max-width: 980px; margin: 0 auto; padding: 20px; display:grid; gap:16px; grid-template-columns: 1fr 300px; }
+  @media (max-width: 800px) { main { grid-template-columns: 1fr; } }
+  .card { background:var(--card); border-radius:12px; padding:14px; }
+  .stage { position:relative; aspect-ratio: 4/3; background:#000; border-radius:12px; overflow:hidden; }
+  video, canvas { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scaleX(-1); }
+  #big { font-size: 96px; font-weight: 700; text-align:center; line-height:1.1; min-height:110px; }
+  #conf { text-align:center; color:var(--mut); }
+  #text { font-size: 28px; min-height: 40px; word-break: break-all; letter-spacing: 2px; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; }
+  button { background:#2a2f39; color:var(--fg); border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+  button.primary { background:var(--ok); color:#06140d; font-weight:600; }
+  .bar { display:flex; align-items:center; gap:8px; font-size:13px; margin:3px 0; }
+  .bar span:first-child { width:24px; font-weight:600; }
+  .bar div { height:8px; background:var(--ok); border-radius:4px; }
+  small { color:var(--mut); }
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <div class="stage"><video id="video" playsinline muted></video><canvas id="overlay"></canvas></div>
+    <div class="row" style="margin-top:10px">
+      <button class="primary" id="start">Bật webcam</button>
+      <select id="mode" style="background:#2a2f39;color:var(--fg);border:0;border-radius:8px;padding:8px">
+        <option value="letters">Chữ A–Z</option><option value="digits">Số 0–9</option><option value="all">Tất cả</option>
+      </select>
+      <button id="space">Dấu cách</button>
+      <button id="back">Xoá 1 ký tự</button>
+      <button id="clear">Xoá hết</button>
+      <a href="/collect" style="color:var(--ok);align-self:center">Ghi mẫu để train thêm →</a>
+    </div>
+    <p><small>Giữ yên một ký hiệu khoảng 1 giây để thêm vào câu. Webcam chỉ chạy trên https hoặc localhost.</small></p>
+  </section>
+  <aside class="card">
+    <div id="big">–</div>
+    <div id="conf">chưa có dự đoán</div>
+    <hr style="border-color:#2a2f39">
+    <div id="topk"></div>
+    <hr style="border-color:#2a2f39">
+    <small>Câu:</small>
+    <div id="text"></div>
+    <small id="lat"></small>
+  </aside>
+</main>
+<script>
+const API = "";                       // cùng origin với FastAPI
+const INTERVAL_MS = 200;              // ~5 khung hình/giây gửi lên server
+const WINDOW = 7, HOLD_FRAMES = 5, MIN_CONF = 0.6;
+const EDGES = [[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],
+               [9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+
+const video = document.getElementById("video"), overlay = document.getElementById("overlay");
+const ctx = overlay.getContext("2d"), grab = document.createElement("canvas");
+let history = [], stable = null, stableCount = 0, lastAdded = null, busy = false, timer = null;
+let text = "";
+
+document.getElementById("start").onclick = async () => {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+    video.srcObject = stream; await video.play();
+    if (!timer) timer = setInterval(tick, INTERVAL_MS);
+  } catch (e) { alert("Không mở được webcam: " + e.message); }
+};
+document.getElementById("space").onclick = () => { text += " "; render(); };
+document.getElementById("back").onclick = () => { text = text.slice(0, -1); render(); };
+document.getElementById("mode").onchange = () => { history = []; stableCount = 0; lastAdded = null; };
+document.getElementById("clear").onclick = () => { text = ""; lastAdded = null; render(); };
+
+async function tick() {
+  if (busy || video.readyState < 2) return;
+  busy = true;
+  try {
+    grab.width = video.videoWidth; grab.height = video.videoHeight;
+    grab.getContext("2d").drawImage(video, 0, 0);
+    const blob = await new Promise(r => grab.toBlob(r, "image/jpeg", 0.8));
+    const fd = new FormData(); fd.append("file", blob, "frame.jpg");
+    const mode = document.getElementById("mode").value;
+    const res = await fetch(API + `/predict?top_k=5&mode=${mode}`, { method: "POST", body: fd });
+    if (!res.ok) throw new Error(res.status);
+    show(await res.json());
+  } catch (e) { document.getElementById("lat").textContent = "Lỗi: " + e.message; }
+  finally { busy = false; }
+}
+
+function show(p) {
+  draw(p.landmarks || []);
+  document.getElementById("lat").textContent = `server ${p.latency_ms.toFixed(0)} ms`;
+  if (!p.hand_detected) {
+    history = []; stableCount = 0; lastAdded = null;
+    document.getElementById("big").textContent = "–";
+    document.getElementById("conf").textContent = "không thấy tay";
+    document.getElementById("topk").innerHTML = "";
+    return;
+  }
+  history.push(p.confidence >= MIN_CONF ? p.label : null);
+  if (history.length > WINDOW) history.shift();
+  const counts = {}; history.forEach(l => { if (l) counts[l] = (counts[l] || 0) + 1; });
+  const [vote, n] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] || [null, 0];
+  const smooth = n >= Math.ceil(WINDOW / 2) ? vote : null;
+
+  document.getElementById("big").textContent = smooth ?? p.label;
+  document.getElementById("big").style.color = smooth ? "var(--ok)" : "var(--warn)";
+  document.getElementById("conf").textContent = `${p.label} · ${(p.confidence * 100).toFixed(0)}% · ${p.num_hands} tay`;
+  document.getElementById("topk").innerHTML = p.top_k.map(c =>
+    `<div class="bar"><span>${c.label}</span><div style="width:${Math.max(2, c.prob * 220)}px"></div>
+     <small>${(c.prob * 100).toFixed(1)}%</small></div>`).join("");
+
+  stableCount = smooth && smooth === stable ? stableCount + 1 : 0;
+  stable = smooth;
+  if (smooth && stableCount === HOLD_FRAMES && smooth !== lastAdded) {
+    text += smooth; lastAdded = smooth; render();
+  }
+}
+
+function draw(hands) {
+  overlay.width = video.videoWidth || 640; overlay.height = video.videoHeight || 480;
+  ctx.clearRect(0, 0, overlay.width, overlay.height);
+  const W = overlay.width, H = overlay.height;
+  hands.forEach((h, i) => {
+    ctx.strokeStyle = i ? "#f5a524" : "#3ecf8e"; ctx.lineWidth = 3;
+    EDGES.forEach(([a, b]) => { ctx.beginPath(); ctx.moveTo(h[a][0]*W, h[a][1]*H); ctx.lineTo(h[b][0]*W, h[b][1]*H); ctx.stroke(); });
+    ctx.fillStyle = "#fff";
+    h.forEach(p => { ctx.beginPath(); ctx.arc(p[0]*W, p[1]*H, 4, 0, 7); ctx.fill(); });
+  });
+}
+function render() { document.getElementById("text").textContent = text; }
+</script>
+</body>
+</html>
