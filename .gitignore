@@ -77,8 +77,10 @@ target/
 
 # exclude data from source control by default
 # this is commented out for the sake of this demo - recommend adding
-# /data/
-
+/data/
+.venv/
+__pycache__/
+*.pyc
 # Mac OS-specific storage files
 .DS_Store
 
