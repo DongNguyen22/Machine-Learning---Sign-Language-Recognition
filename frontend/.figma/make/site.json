@@ -1,0 +1,10 @@
+{
+  "description": "Nhận diện cử chỉ ngôn ngữ ký hiệu qua webcam và chuyển thành văn bản hoặc giọng nói theo thời gian thực, hỗ trợ giao tiếp dễ dàng hơn.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
