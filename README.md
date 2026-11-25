@@ -1,4 +1,4 @@
-# Nhận diện Ngôn ngữ ký hiệu Mỹ — ASL Alphabet A-Z
+# Nhận diện Ngôn ngữ ký hiệu — ASL Alphabet A-Z
 
 Đồ án nhận diện 26 ký tự bàn tay ASL bằng MediaPipe Hands, đặc trưng hình học 91 chiều và các mô hình phân loại TensorFlow/Keras và scikit-learn. Pipeline hỗ trợ ảnh tĩnh, tập dữ liệu Kaggle/Mendeley, webcam thực tế và ứng dụng desktop.
 
