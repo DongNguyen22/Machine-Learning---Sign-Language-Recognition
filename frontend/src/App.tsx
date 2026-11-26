@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Icon, type IconName } from "./Icon";
 import { RecognitionPage } from "./recognition/RecognitionPage";
 import { useModelLabels } from "./recognition/usePredictor";
+import { getSignInfo, SIGN_CATEGORIES, signImageUrl } from "./signInfo";
 const nav = [
   { id: "home", label: "Trang chủ" },
   { id: "recognition", label: "Nhận diện" },
@@ -32,6 +33,22 @@ function HandDrawing({ pose = "open" }: { pose?: string }) {
       <path d="M48 138h54M56 150h40M66 96q16-9 30 1" />
       <circle cx="80" cy="100" r="3" fill="currentColor" stroke="none" />
     </svg>
+  );
+}
+
+/** Ảnh thật của ký hiệu (public/images/signs/<label>.png); thiếu ảnh thì dùng hình vẽ minh họa. */
+function SignImage({ label, pose }: { label: string; pose: string }) {
+  const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false), [label]);
+  if (failed) return <HandDrawing pose={pose} />;
+  return (
+    <img
+      className="sign-photo"
+      src={signImageUrl(label)}
+      alt={`Ký hiệu ASL chữ ${label}`}
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
   );
 }
 
@@ -91,14 +108,11 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const { labels, error: labelsError } = useModelLabels();
-  const signs = labels.map((label) => ({
-    label,
-    category: "Model",
-    description: "Ký hiệu được hỗ trợ bởi model đã cấu hình.",
-    pose: "open",
-  }));
-  const filtered = signs.filter((s) =>
-    s.label.toLocaleLowerCase("vi").includes(search.toLocaleLowerCase("vi")),
+  const signs = labels.map((label) => ({ label, ...getSignInfo(label) }));
+  const filtered = signs.filter(
+    (s) =>
+      (category === "Tất cả" || s.category === category) &&
+      s.label.toLocaleLowerCase("vi").includes(search.toLocaleLowerCase("vi")),
   );
   return (
     <div className={`app ${dark ? "dark" : ""}`}>
@@ -291,7 +305,7 @@ export default function App() {
             <Icon name="info" size={19} />
             <p>
               {labelsError ||
-                "Danh sách được đọc trực tiếp từ labels.json của model. Hình vẽ chỉ mang tính minh họa."}
+                "Danh sách được đọc trực tiếp từ labels.json của model. Bấm vào thẻ để xem cách tạo dáng tay."}
             </p>
           </div>
           <div className="dictionary-filters">
@@ -310,7 +324,7 @@ export default function App() {
               )}
             </label>
             <div className="category-filters">
-              {["Tất cả", "Model"].map((c) => (
+              {SIGN_CATEGORIES.map((c) => (
                 <button
                   className={category === c ? "active" : ""}
                   aria-pressed={category === c}
@@ -330,7 +344,7 @@ export default function App() {
                 onClick={() => setSelectedSign(sign)}
               >
                 <div className="sign-illustration">
-                  <HandDrawing pose={sign.pose} />
+                  <SignImage label={sign.label} pose={sign.pose} />
                   <span className="sign-arrow">
                     <Icon name="arrow" size={18} />
                   </span>
@@ -519,14 +533,14 @@ export default function App() {
             {selectedSign ? (
               <>
                 <div className="modal-sign">
-                  <HandDrawing pose={selectedSign.pose} />
+                  <SignImage label={selectedSign.label} pose={selectedSign.pose} />
                 </div>
                 <span className="sign-category">{selectedSign.category}</span>
                 <h2>{selectedSign.label}</h2>
                 <p>{selectedSign.description}</p>
                 <p className="modal-note">
-                  Hình minh họa tham khảo. Hãy học cùng người hướng dẫn VSL để đảm bảo thực hiện
-                  chính xác.
+                  Hình minh họa tham khảo bảng chữ cái ASL (American Sign Language). Đặt bàn tay
+                  rõ trong khung hình camera để model nhận diện tốt nhất.
                 </p>
                 <button
                   className="button"
