@@ -95,6 +95,7 @@ target/
 
 # Virtual environments
 models/Dong/.venv/
+models/Hiep/.venv/
 
 # Frontend dependencies and build output
 frontend/node_modules/
