@@ -1,0 +1,272 @@
+{
+  "generated_at": "2026-11-26T16:40:02.702395",
+  "dataset_path": "C:\\Users\\Quang Diep\\Downloads\\ASL-HG American Sign Language Hand Gesture Image D\\ASL-HG American Sign Language Hand Gesture Image D\\ASL_HG_36000\\ASL_Processed_Images\\asl_processed",
+  "total_images": 36000,
+  "original_train": {
+    "image_count": 28800,
+    "unique_sha256_count": 28391,
+    "within_split_duplicate_rows": 409,
+    "prefix_groups": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10"
+    ],
+    "prefix_group_count": 10,
+    "images_by_prefix_group": {
+      "P1": 2926,
+      "P2": 2876,
+      "P3": 2891,
+      "P4": 2838,
+      "P5": 2854,
+      "P6": 2915,
+      "P7": 2844,
+      "P8": 2884,
+      "P9": 2882,
+      "P10": 2890
+    }
+  },
+  "original_test": {
+    "image_count": 7200,
+    "unique_sha256_count": 7172,
+    "within_split_duplicate_rows": 28,
+    "prefix_groups": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10"
+    ],
+    "prefix_group_count": 10,
+    "images_by_prefix_group": {
+      "P1": 674,
+      "P2": 724,
+      "P3": 709,
+      "P4": 762,
+      "P5": 746,
+      "P6": 685,
+      "P7": 756,
+      "P8": 716,
+      "P9": 718,
+      "P10": 710
+    }
+  },
+  "original_train_vs_test_leakage": {
+    "overlapping_prefix_groups": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10"
+    ],
+    "overlapping_prefix_group_count": 10,
+    "overlapping_unique_sha256_count": 159,
+    "original_test_rows_exact_sha256_in_train": 165,
+    "original_train_rows_exact_sha256_in_test": 227,
+    "can_use_original_test_as_unseen_group_test": false
+  },
+  "all_36000_cross_prefix_sha256_audit": {
+    "cross_prefix_duplicate_clusters_count": 199,
+    "cross_prefix_duplicate_clusters_by_group_pair": {
+      "P5-P6": 199
+    },
+    "connected_component_super_groups": {
+      "P1": [
+        "P1"
+      ],
+      "P10": [
+        "P10"
+      ],
+      "P2": [
+        "P2"
+      ],
+      "P3": [
+        "P3"
+      ],
+      "P4": [
+        "P4"
+      ],
+      "P5+P6": [
+        "P5",
+        "P6"
+      ],
+      "P7": [
+        "P7"
+      ],
+      "P8": [
+        "P8"
+      ],
+      "P9": [
+        "P9"
+      ]
+    },
+    "sample_clusters": [
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_401.jpg",
+          "train/I/P6_I_501.jpg"
+        ],
+        "file_sha256": "c831091ddd5a97cb0d184bf379ff5175a6da72bc91c9003b4107a0d1bf0a270f"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_402.jpg",
+          "test/I/P6_I_502.jpg"
+        ],
+        "file_sha256": "d46a619158cfbe812a15c65d758c00409c65d220efd6d94d101cb931fd9dc254"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_403.jpg",
+          "train/I/P6_I_503.jpg"
+        ],
+        "file_sha256": "6a7f4805f0efd3cc78f7181d69d2a1e9c660bd048cfef61e6ee458f272a8f383"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_404.jpg",
+          "train/I/P6_I_504.jpg"
+        ],
+        "file_sha256": "8f799bcb7560bf1cbe7d4a44f7538916f2ab25c645683b76dbe5dd340dec555d"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_405.jpg",
+          "test/I/P6_I_505.jpg"
+        ],
+        "file_sha256": "44b792ac0421b97e1f8ff3b4e310db0e952cc863bfcc5351debb266e92aa0dfc"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_406.jpg",
+          "test/I/P6_I_506.jpg"
+        ],
+        "file_sha256": "af66985cd9743010d2dcf33397901cad5ae62e5c37cde589abff694ad0343c62"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_407.jpg",
+          "train/I/P6_I_507.jpg"
+        ],
+        "file_sha256": "6601cf83045bb0d7074a55b5b5307217e2eaa150ec5fff04e29d618efe9fed6e"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_408.jpg",
+          "train/I/P6_I_508.jpg"
+        ],
+        "file_sha256": "6f4e0b92ab937af2d3bb9b5da4abbe21d22ade59ee28d1160d96215673d74728"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_409.jpg",
+          "train/I/P6_I_509.jpg"
+        ],
+        "file_sha256": "68c38247ee32c1437f0b1a39ac2434631fd40893ed0f0a0bb74fcc01bad94fbc"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_names": [
+          "I"
+        ],
+        "count": 2,
+        "sample_paths": [
+          "train/I/P5_I_410.jpg",
+          "test/I/P6_I_510.jpg"
+        ],
+        "file_sha256": "060e9c88c599af9e09bbeddbcbb14b6a4bae538135e1e1edf5f2f141e5d2241e"
+      }
+    ]
+  }
+}

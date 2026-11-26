@@ -1,0 +1,131 @@
+{
+  "experiment": "direction_a_phase3_split_az_09",
+  "subset_name": "AZ_26",
+  "candidate_id": "AZ_26__rbf_C10_g0.005_flip",
+  "model_path": "models/svm/experiments/landmark_asl_v3_split/svm_landmark_az_v3.joblib",
+  "model_sha256": "bb124da03a1a1ac84e9accdf28ec20cbce0bf2171981cb6aed97e63f3331a715",
+  "pipeline_steps": [
+    "scaler:StandardScaler",
+    "clf:SVC"
+  ],
+  "feature_schema": "mediapipe_21_xy_geom_v2",
+  "feature_dim": 86,
+  "class_names": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "class_count": 26,
+  "augment_horizontal_flip": true,
+  "hyperparameters": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": 0.005,
+    "decision_function_shape": "ovr",
+    "probability": false,
+    "random_state": 42
+  },
+  "split_config": {
+    "cache_path": "results/svm/experiments/landmark_asl_v1/asl_landmarks_cache.npz",
+    "cache_sha256": "a9179404a44e6670a3f99aa2f8a5e99ad09cb1b47b5e124586be86526af06608",
+    "train_prefix_groups": [
+      "P1",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P9"
+    ],
+    "validation_prefix_groups": [
+      "P8",
+      "P10"
+    ],
+    "test_prefix_groups": [
+      "P2",
+      "P7"
+    ],
+    "train_detected_raw": 15022,
+    "train_samples_fitted": 30044
+  },
+  "validation_summary": {
+    "baseline_v2_36_full": {
+      "method_type": "baseline_v2_36_full",
+      "candidate_id": "AZ_26__v2_36_full",
+      "C": 1.0,
+      "gamma": "0.005",
+      "fit_seconds": 0.0,
+      "convergence_warnings": 0,
+      "val_orig_cond_accuracy": 0.882911,
+      "val_orig_cond_macro_f1": 0.876273,
+      "val_orig_e2e_accuracy": 0.858462,
+      "val_orig_out_of_subset": 107,
+      "val_mir_cond_accuracy": 0.882911,
+      "val_mir_cond_macro_f1": 0.876229,
+      "val_mir_e2e_accuracy": 0.858462,
+      "combined_val_cond_macro_f1": 0.876251,
+      "min_val_cond_macro_f1": 0.876229,
+      "combined_val_cond_accuracy": 0.882911
+    },
+    "method1_v2_36_masked": {
+      "method_type": "method1_v2_36_masked",
+      "candidate_id": "AZ_26__v2_36_masked",
+      "C": 1.0,
+      "gamma": "0.005",
+      "fit_seconds": 0.0,
+      "convergence_warnings": 0,
+      "val_orig_cond_accuracy": 0.89379,
+      "val_orig_cond_macro_f1": 0.881538,
+      "val_orig_e2e_accuracy": 0.869038,
+      "val_orig_out_of_subset": 0,
+      "val_mir_cond_accuracy": 0.89379,
+      "val_mir_cond_macro_f1": 0.881492,
+      "val_mir_e2e_accuracy": 0.869038,
+      "combined_val_cond_macro_f1": 0.881515,
+      "min_val_cond_macro_f1": 0.881492,
+      "combined_val_cond_accuracy": 0.89379
+    },
+    "dedicated_best": {
+      "method_type": "method2_dedicated_AZ_26",
+      "candidate_id": "AZ_26__rbf_C10_g0.005_flip",
+      "C": 10.0,
+      "gamma": "0.005",
+      "fit_seconds": 1.184,
+      "convergence_warnings": 1,
+      "val_orig_cond_accuracy": 0.913766,
+      "val_orig_cond_macro_f1": 0.899319,
+      "val_orig_e2e_accuracy": 0.888462,
+      "val_orig_out_of_subset": 0,
+      "val_mir_cond_accuracy": 0.913766,
+      "val_mir_cond_macro_f1": 0.899319,
+      "val_mir_e2e_accuracy": 0.888462,
+      "combined_val_cond_macro_f1": 0.899319,
+      "min_val_cond_macro_f1": 0.899319,
+      "combined_val_cond_accuracy": 0.913766
+    },
+    "overall_validation_winner": "AZ_26__rbf_C10_g0.005_flip"
+  },
+  "created_at": "2026-11-26T18:36:38"
+}

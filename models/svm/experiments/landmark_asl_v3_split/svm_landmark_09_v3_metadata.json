@@ -1,0 +1,115 @@
+{
+  "experiment": "direction_a_phase3_split_az_09",
+  "subset_name": "09_10",
+  "candidate_id": "09_10__rbf_C10_g0.01_flip",
+  "model_path": "models/svm/experiments/landmark_asl_v3_split/svm_landmark_09_v3.joblib",
+  "model_sha256": "ccd3380eba3f7702cff81e6b027900391358ef2e637f6c6e268aef8999ab1163",
+  "pipeline_steps": [
+    "scaler:StandardScaler",
+    "clf:SVC"
+  ],
+  "feature_schema": "mediapipe_21_xy_geom_v2",
+  "feature_dim": 86,
+  "class_names": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "class_count": 10,
+  "augment_horizontal_flip": true,
+  "hyperparameters": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": 0.01,
+    "decision_function_shape": "ovr",
+    "probability": false,
+    "random_state": 42
+  },
+  "split_config": {
+    "cache_path": "results/svm/experiments/landmark_asl_v1/asl_landmarks_cache.npz",
+    "cache_sha256": "a9179404a44e6670a3f99aa2f8a5e99ad09cb1b47b5e124586be86526af06608",
+    "train_prefix_groups": [
+      "P1",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P9"
+    ],
+    "validation_prefix_groups": [
+      "P8",
+      "P10"
+    ],
+    "test_prefix_groups": [
+      "P2",
+      "P7"
+    ],
+    "train_detected_raw": 5781,
+    "train_samples_fitted": 11562
+  },
+  "validation_summary": {
+    "baseline_v2_36_full": {
+      "method_type": "baseline_v2_36_full",
+      "candidate_id": "09_10__v2_36_full",
+      "C": 1.0,
+      "gamma": "0.005",
+      "fit_seconds": 0.0,
+      "convergence_warnings": 0,
+      "val_orig_cond_accuracy": 0.880064,
+      "val_orig_cond_macro_f1": 0.913141,
+      "val_orig_e2e_accuracy": 0.8255,
+      "val_orig_out_of_subset": 225,
+      "val_mir_cond_accuracy": 0.880064,
+      "val_mir_cond_macro_f1": 0.913141,
+      "val_mir_e2e_accuracy": 0.8255,
+      "combined_val_cond_macro_f1": 0.913141,
+      "min_val_cond_macro_f1": 0.913141,
+      "combined_val_cond_accuracy": 0.880064
+    },
+    "method1_v2_36_masked": {
+      "method_type": "method1_v2_36_masked",
+      "candidate_id": "09_10__v2_36_masked",
+      "C": 1.0,
+      "gamma": "0.005",
+      "fit_seconds": 0.0,
+      "convergence_warnings": 0,
+      "val_orig_cond_accuracy": 0.988273,
+      "val_orig_cond_macro_f1": 0.977864,
+      "val_orig_e2e_accuracy": 0.927,
+      "val_orig_out_of_subset": 0,
+      "val_mir_cond_accuracy": 0.988273,
+      "val_mir_cond_macro_f1": 0.977864,
+      "val_mir_e2e_accuracy": 0.927,
+      "combined_val_cond_macro_f1": 0.977864,
+      "min_val_cond_macro_f1": 0.977864,
+      "combined_val_cond_accuracy": 0.988273
+    },
+    "dedicated_best": {
+      "method_type": "method2_dedicated_09_10",
+      "candidate_id": "09_10__rbf_C10_g0.01_flip",
+      "C": 10.0,
+      "gamma": "0.01",
+      "fit_seconds": 0.26,
+      "convergence_warnings": 1,
+      "val_orig_cond_accuracy": 0.994136,
+      "val_orig_cond_macro_f1": 0.989887,
+      "val_orig_e2e_accuracy": 0.9325,
+      "val_orig_out_of_subset": 0,
+      "val_mir_cond_accuracy": 0.994136,
+      "val_mir_cond_macro_f1": 0.989887,
+      "val_mir_e2e_accuracy": 0.9325,
+      "combined_val_cond_macro_f1": 0.989887,
+      "min_val_cond_macro_f1": 0.989887,
+      "combined_val_cond_accuracy": 0.994136
+    },
+    "overall_validation_winner": "09_10__rbf_C10_g0.01_flip"
+  },
+  "created_at": "2026-11-26T18:36:38"
+}

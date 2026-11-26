@@ -2,6 +2,11 @@
 # $ conda create --name <env> --file <this file>
 matplotlib
 numpy
+opencv-python
 pandas
 pyyaml
 scikit-learn
+scikit-image
+joblib
+tqdm
+mediapipe

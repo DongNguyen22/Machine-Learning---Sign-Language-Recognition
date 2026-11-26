@@ -1,0 +1,108 @@
+{
+  "health_check": {
+    "status_code": 200,
+    "cors_allow_origin": "http://localhost:5173",
+    "model_ready": true,
+    "class_count": 36,
+    "feature_count": 1764
+  },
+  "labels_count": 36,
+  "cli_vs_api_uncropped_parity": [
+    {
+      "file": "P10_0_906.jpg",
+      "http_status": 200,
+      "cli_label": "0",
+      "api_label": "0",
+      "labels_match": true,
+      "cli_score": 0.9035147822872353,
+      "api_score": 0.9035147822872353,
+      "score_abs_diff": 0.0,
+      "top_3_match": true,
+      "api_timing_ms": {
+        "preprocess_and_hog_seconds": 0.0028703000007226365,
+        "preprocess_and_hog_ms": 2.8703000007226365,
+        "svm_predict_seconds": 0.0015574999997625127,
+        "svm_predict_ms": 1.5574999997625127,
+        "total_end_to_end_seconds": 0.004427800000485149,
+        "total_end_to_end_ms": 4.427800000485149,
+        "image_decode_ms": 0.4172000008111354
+      }
+    },
+    {
+      "file": "P10_A_1000.jpg",
+      "http_status": 200,
+      "cli_label": "A",
+      "api_label": "A",
+      "labels_match": true,
+      "cli_score": 0.8706088200279245,
+      "api_score": 0.8706088200279245,
+      "score_abs_diff": 0.0,
+      "top_3_match": true,
+      "api_timing_ms": {
+        "preprocess_and_hog_seconds": 0.0018043000000034226,
+        "preprocess_and_hog_ms": 1.8043000000034226,
+        "svm_predict_seconds": 0.000719300000127987,
+        "svm_predict_ms": 0.719300000127987,
+        "total_end_to_end_seconds": 0.0025236000001314096,
+        "total_end_to_end_ms": 2.5236000001314096,
+        "image_decode_ms": 0.4191999996692175
+      }
+    },
+    {
+      "file": "P9_Z_894.jpg",
+      "http_status": 200,
+      "cli_label": "Z",
+      "api_label": "Z",
+      "labels_match": true,
+      "cli_score": 1.1160110826931575,
+      "api_score": 1.1160110826931575,
+      "score_abs_diff": 0.0,
+      "top_3_match": true,
+      "api_timing_ms": {
+        "preprocess_and_hog_seconds": 0.002897500000472064,
+        "preprocess_and_hog_ms": 2.897500000472064,
+        "svm_predict_seconds": 0.0014031999999133404,
+        "svm_predict_ms": 1.4031999999133404,
+        "total_end_to_end_seconds": 0.0043007000003854046,
+        "total_end_to_end_ms": 4.300700000385405,
+        "image_decode_ms": 0.4484000000957167
+      }
+    }
+  ],
+  "all_uncropped_parity_passed": true,
+  "cropped_input_check": {
+    "status_code": 200,
+    "crop_applied": {
+      "x": 10,
+      "y": 10,
+      "width": 137,
+      "height": 141,
+      "source_width": 147,
+      "source_height": 151
+    },
+    "predicted_label": "A",
+    "decision_score": 0.37040924004170955
+  },
+  "error_checks": {
+    "missing_image_field": {
+      "status_code": 400,
+      "error": "Thiếu trường 'image' (chuỗi base64 JPEG/PNG). Mô hình SVM yêu cầu đầu vào là ảnh, không nhận mảng landmarks."
+    },
+    "invalid_base64": {
+      "status_code": 400,
+      "error": "Chuỗi base64 trong trường 'image' không hợp lệ."
+    },
+    "corrupted_image_bytes": {
+      "status_code": 400,
+      "error": "Không thể giải mã dữ liệu ảnh (ảnh bị hỏng hoặc định dạng không hợp lệ)."
+    },
+    "payload_too_large": {
+      "status_code": 413,
+      "error": "Kích thước dữ liệu gửi lên (550013 bytes) vượt quá giới hạn cho phép (500000 bytes)."
+    },
+    "disallowed_cors_origin": {
+      "status_code": 403,
+      "error": "Origin không nằm trong danh sách phát triển được phép (CORS)."
+    }
+  }
+}

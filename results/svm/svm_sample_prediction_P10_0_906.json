@@ -1,0 +1,65 @@
+{
+  "image_path": "C:\\Users\\Quang Diep\\Downloads\\ASL-HG American Sign Language Hand Gesture Image D\\ASL-HG American Sign Language Hand Gesture Image D\\ASL_HG_36000\\ASL_Processed_Images\\asl_processed\\test\\0\\P10_0_906.jpg",
+  "image_path_resolved": "C:\\Users\\Quang Diep\\Downloads\\ASL-HG American Sign Language Hand Gesture Image D\\ASL-HG American Sign Language Hand Gesture Image D\\ASL_HG_36000\\ASL_Processed_Images\\asl_processed\\test\\0\\P10_0_906.jpg",
+  "model_path": "models\\svm\\svm_final_c0_01.joblib",
+  "predicted_label": "0",
+  "predicted_class_index": 0,
+  "predicted_decision_score": 0.9035147822872353,
+  "margin_top1_minus_top2": 1.7544244637295023,
+  "top_k_predictions": [
+    {
+      "rank": 1,
+      "class_index": 0,
+      "label": "0",
+      "decision_score": 0.9035147822872353
+    },
+    {
+      "rank": 2,
+      "class_index": 16,
+      "label": "G",
+      "decision_score": -0.8509096814422671
+    },
+    {
+      "rank": 3,
+      "class_index": 23,
+      "label": "N",
+      "decision_score": -0.975760708429185
+    }
+  ],
+  "timing": {
+    "preprocess_and_hog_seconds": 0.007349600000452483,
+    "preprocess_and_hog_ms": 7.349600000452483,
+    "svm_predict_seconds": 0.019191800000044168,
+    "svm_predict_ms": 19.191800000044168,
+    "total_end_to_end_seconds": 0.02654140000049665,
+    "total_end_to_end_ms": 26.54140000049665,
+    "timing_scope": {
+      "preprocess_and_hog": "Bao gồm đọc file ảnh từ ổ đĩa, resize giữ tỉ lệ + padding trắng 64x64, chuyển ảnh xám (grayscale) và trích xuất 1764 đặc trưng HOG (float32).",
+      "svm_predict": "Chỉ bao gồm bước tính decision_function và chọn nhãn của LinearSVC từ vector HOG 1764 chiều đã nằm trong RAM (không tính thời gian nạp model)."
+    }
+  },
+  "model_metadata": {
+    "model_type": "LinearSVC",
+    "c": 0.01,
+    "feature_count": 1764,
+    "class_count": 36,
+    "image_size": [
+      64,
+      64
+    ],
+    "hog_parameters": {
+      "orientations": 9,
+      "pixels_per_cell": [
+        8,
+        8
+      ],
+      "cells_per_block": [
+        2,
+        2
+      ],
+      "block_norm": "L2-Hys"
+    }
+  },
+  "decision_score_note": "decision_score là giá trị hàm quyết định tuyến tính (khoảng cách đại số có dấu tới siêu phẳng phân lớp của LinearSVC), có thể âm hoặc dương. Đây KHÔNG phải là xác suất hay độ tin cậy phần trăm (không dùng softmax).",
+  "limitation_note": "Mô hình LinearSVC luôn chọn lớp có decision_score cao nhất trong 36 lớp đã học (0–9, A–Z). Ảnh không có bàn tay, ký hiệu ngoài tập 36 lớp, hoặc ảnh có nền/ánh sáng khác biệt lớn vẫn sẽ bị gán vào 1 trong 36 nhãn. Chưa đặt ngưỡng từ chối (rejection threshold) vì chưa có tập dữ liệu ngoài phân phối để kiểm chứng ngưỡng."
+}

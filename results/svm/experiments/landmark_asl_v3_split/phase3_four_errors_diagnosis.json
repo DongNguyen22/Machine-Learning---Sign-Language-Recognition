@@ -1,0 +1,436 @@
+{
+  "four_errors_by_split": {
+    "validation": {
+      "v2_36_full": {
+        "pair_counts": {
+          "I->J": 0,
+          "J->I": 0,
+          "K->2": 0,
+          "V->2": 0,
+          "X->1": 0
+        },
+        "per_letter": {
+          "I": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "I": 200
+            }
+          },
+          "J": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "J": 200
+            }
+          },
+          "K": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "K": 200
+            }
+          },
+          "V": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "V": 200
+            }
+          },
+          "X": {
+            "correct": 5,
+            "detected": 200,
+            "recall_pct": 2.5,
+            "pred_dist": {
+              "Z": 182,
+              "G": 12,
+              "X": 5,
+              "P": 1
+            }
+          }
+        }
+      },
+      "v2_36_masked": {
+        "pair_counts": {
+          "I->J": 0,
+          "J->I": 0,
+          "K->2": 0,
+          "V->2": 0,
+          "X->1": 0
+        },
+        "per_letter": {
+          "I": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "I": 200
+            }
+          },
+          "J": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "J": 200
+            }
+          },
+          "K": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "K": 200
+            }
+          },
+          "V": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "V": 200
+            }
+          },
+          "X": {
+            "correct": 5,
+            "detected": 200,
+            "recall_pct": 2.5,
+            "pred_dist": {
+              "Z": 184,
+              "G": 11,
+              "X": 5
+            }
+          }
+        }
+      },
+      "svm_az": {
+        "pair_counts": {
+          "I->J": 0,
+          "J->I": 0,
+          "K->2": 0,
+          "V->2": 0,
+          "X->1": 0
+        },
+        "per_letter": {
+          "I": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "I": 200
+            }
+          },
+          "J": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "J": 200
+            }
+          },
+          "K": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "K": 200
+            }
+          },
+          "V": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "V": 200
+            }
+          },
+          "X": {
+            "correct": 3,
+            "detected": 200,
+            "recall_pct": 1.5,
+            "pred_dist": {
+              "Z": 190,
+              "G": 6,
+              "X": 3,
+              "P": 1
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "v2_36_full": {
+        "pair_counts": {
+          "I->J": 0,
+          "J->I": 2,
+          "K->2": 0,
+          "V->2": 101,
+          "X->1": 0
+        },
+        "per_letter": {
+          "I": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "I": 200
+            }
+          },
+          "J": {
+            "correct": 198,
+            "detected": 200,
+            "recall_pct": 99.0,
+            "pred_dist": {
+              "J": 198,
+              "I": 2
+            }
+          },
+          "K": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "K": 200
+            }
+          },
+          "V": {
+            "correct": 74,
+            "detected": 175,
+            "recall_pct": 42.29,
+            "pred_dist": {
+              "2": 101,
+              "V": 74
+            }
+          },
+          "X": {
+            "correct": 119,
+            "detected": 181,
+            "recall_pct": 65.75,
+            "pred_dist": {
+              "X": 119,
+              "Q": 62
+            }
+          }
+        }
+      },
+      "v2_36_masked": {
+        "pair_counts": {
+          "I->J": 0,
+          "J->I": 2,
+          "K->2": 0,
+          "V->2": 0,
+          "X->1": 0
+        },
+        "per_letter": {
+          "I": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "I": 200
+            }
+          },
+          "J": {
+            "correct": 198,
+            "detected": 200,
+            "recall_pct": 99.0,
+            "pred_dist": {
+              "J": 198,
+              "I": 2
+            }
+          },
+          "K": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "K": 200
+            }
+          },
+          "V": {
+            "correct": 165,
+            "detected": 175,
+            "recall_pct": 94.29,
+            "pred_dist": {
+              "V": 165,
+              "U": 10
+            }
+          },
+          "X": {
+            "correct": 133,
+            "detected": 181,
+            "recall_pct": 73.48,
+            "pred_dist": {
+              "X": 133,
+              "Q": 43,
+              "Z": 5
+            }
+          }
+        }
+      },
+      "svm_az": {
+        "pair_counts": {
+          "I->J": 0,
+          "J->I": 4,
+          "K->2": 0,
+          "V->2": 0,
+          "X->1": 0
+        },
+        "per_letter": {
+          "I": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "I": 200
+            }
+          },
+          "J": {
+            "correct": 196,
+            "detected": 200,
+            "recall_pct": 98.0,
+            "pred_dist": {
+              "J": 196,
+              "I": 4
+            }
+          },
+          "K": {
+            "correct": 200,
+            "detected": 200,
+            "recall_pct": 100.0,
+            "pred_dist": {
+              "K": 200
+            }
+          },
+          "V": {
+            "correct": 163,
+            "detected": 175,
+            "recall_pct": 93.14,
+            "pred_dist": {
+              "V": 163,
+              "U": 12
+            }
+          },
+          "X": {
+            "correct": 148,
+            "detected": 181,
+            "recall_pct": 81.77,
+            "pred_dist": {
+              "X": 148,
+              "Q": 33
+            }
+          }
+        }
+      }
+    }
+  },
+  "i_vs_j_asl_processed_geometry": {
+    "I_summary": {
+      "n": 1000,
+      "palm_tilt_deg_mean": 4.91,
+      "palm_tilt_deg_std": 6.97,
+      "abs_palm_tilt_deg_mean": 6.6,
+      "pinky_angle_deg_mean": -7.92,
+      "pinky_angle_deg_std": 10.61,
+      "abs_pinky_angle_deg_mean": 10.02,
+      "pinky_dx_mean": -0.2826,
+      "pinky_dy_mean": -0.9519,
+      "d_pinky20_wrist0_mean": 1.0,
+      "d_ring16_wrist0_mean": 0.38,
+      "d_thumb4_wrist0_mean": 0.6588,
+      "d_index8_wrist0_mean": 0.5242,
+      "d_middle12_wrist0_mean": 0.4142
+    },
+    "J_summary": {
+      "n": 1000,
+      "palm_tilt_deg_mean": -28.56,
+      "palm_tilt_deg_std": 12.71,
+      "abs_palm_tilt_deg_mean": 28.56,
+      "pinky_angle_deg_mean": -46.57,
+      "pinky_angle_deg_std": 9.23,
+      "abs_pinky_angle_deg_mean": 46.57,
+      "pinky_dx_mean": -0.7688,
+      "pinky_dy_mean": -0.6141,
+      "d_pinky20_wrist0_mean": 1.0,
+      "d_ring16_wrist0_mean": 0.3587,
+      "d_thumb4_wrist0_mean": 0.64,
+      "d_index8_wrist0_mean": 0.4978,
+      "d_middle12_wrist0_mean": 0.407
+    },
+    "centroid_separation": {
+      "xy_42d_centroid_dist": 1.5759,
+      "xy_42d_mean_within_radius": 0.4548,
+      "xy_42d_separation_ratio": 3.465,
+      "geom_44d_centroid_dist": 0.3076,
+      "geom_44d_mean_within_radius": 0.5761,
+      "geom_44d_separation_ratio": 0.534
+    },
+    "by_prefix_group_tilt_deg": {
+      "P1": {
+        "I_palm_tilt_deg": 8.07,
+        "J_palm_tilt_deg": -15.41,
+        "I_pinky_angle_deg": -4.3,
+        "J_pinky_angle_deg": -44.41
+      },
+      "P2": {
+        "I_palm_tilt_deg": 6.89,
+        "J_palm_tilt_deg": -26.04,
+        "I_pinky_angle_deg": -6.22,
+        "J_pinky_angle_deg": -39.97
+      },
+      "P3": {
+        "I_palm_tilt_deg": 16.5,
+        "J_palm_tilt_deg": -36.57,
+        "I_pinky_angle_deg": 3.86,
+        "J_pinky_angle_deg": -44.74
+      },
+      "P4": {
+        "I_palm_tilt_deg": 0.13,
+        "J_palm_tilt_deg": -38.99,
+        "I_pinky_angle_deg": -18.51,
+        "J_pinky_angle_deg": -62.79
+      },
+      "P5": {
+        "I_palm_tilt_deg": -3.71,
+        "J_palm_tilt_deg": -45.99,
+        "I_pinky_angle_deg": -2.72,
+        "J_pinky_angle_deg": -51.68
+      },
+      "P6": {
+        "I_palm_tilt_deg": -3.71,
+        "J_palm_tilt_deg": -13.39,
+        "I_pinky_angle_deg": -2.72,
+        "J_pinky_angle_deg": -36.91
+      },
+      "P7": {
+        "I_palm_tilt_deg": 15.52,
+        "J_palm_tilt_deg": -15.7,
+        "I_pinky_angle_deg": -6.63,
+        "J_pinky_angle_deg": -34.71
+      },
+      "P8": {
+        "I_palm_tilt_deg": 2.65,
+        "J_palm_tilt_deg": -31.21,
+        "I_pinky_angle_deg": 6.58,
+        "J_pinky_angle_deg": -41.86
+      },
+      "P9": {
+        "I_palm_tilt_deg": 6.84,
+        "J_palm_tilt_deg": -14.87,
+        "I_pinky_angle_deg": -22.23,
+        "J_pinky_angle_deg": -46.51
+      },
+      "P10": {
+        "I_palm_tilt_deg": -0.13,
+        "J_palm_tilt_deg": -47.39,
+        "I_pinky_angle_deg": -26.33,
+        "J_pinky_angle_deg": -62.09
+      }
+    }
+  }
+}

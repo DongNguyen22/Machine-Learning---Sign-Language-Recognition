@@ -1,0 +1,235 @@
+{
+  "check_1_code_and_predictions": {
+    "fit_only_uses_X_fit": true,
+    "predict_uses_X_validation": true,
+    "metrics_compare_y_validation_and_y_pred": true,
+    "hardcoded_or_rounded_metrics_in_code": false,
+    "test_set_loaded_in_train_svm": false,
+    "fit_samples": 23040,
+    "fit_correct_predictions": 23040,
+    "fit_incorrect_predictions": 0,
+    "fit_accuracy": 1.0,
+    "validation_samples": 5760,
+    "validation_correct_predictions": 5760,
+    "validation_incorrect_predictions": 0,
+    "validation_accuracy_unrounded": 1.0,
+    "validation_macro_precision_unrounded": 1.0,
+    "validation_macro_recall_unrounded": 1.0,
+    "validation_macro_f1_unrounded": 1.0,
+    "matches_saved_json_report": true,
+    "decision_margin_top1_minus_top2": {
+      "min": 0.9763936549796458,
+      "p01": 1.7020379693835614,
+      "median": 2.2834524027387655,
+      "mean": 2.2994500461291647,
+      "max": 3.464193745626334
+    },
+    "true_class_decision_score": {
+      "min": 0.12984317862322806,
+      "median": 1.183506585416606,
+      "max": 2.3015852229462497
+    }
+  },
+  "check_2_split_and_fingerprints": {
+    "direct_split_matches_indexed_split": true,
+    "fit_indices_count": 23040,
+    "validation_indices_count": 5760,
+    "index_overlap_count": 0,
+    "union_equals_full_train_28800": true,
+    "samples_per_class_in_fit": [
+      640
+    ],
+    "samples_per_class_in_validation": [
+      160
+    ],
+    "saved_split_file": "results\\svm\\svm_validation_split_indices.npz",
+    "data_fingerprints": {
+      "features_file": "data\\processed\\svm_hog_features.npz",
+      "features_file_size_bytes": 163463525,
+      "features_file_sha256": "096667c46efa4a3d160043fc1c5c32ce9febf1c910d179a2a0191f036db16402",
+      "X_train_sha256": "76cfd91db0907e1640174a938ec343e23b1b2a68b941fee555bf374f3d144ec9",
+      "y_train_sha256": "c12cfcd6ca3c7f93f830d1d88c20898fa7f0268e2b8dcf10e12f7a7332d16dc8",
+      "X_test_sha256": "2a3957d1b523502cc003677c3375079f66870231d2bde376f1ddfe8563d94991",
+      "y_test_sha256": "3f5980acad76883f8666a08a878330fed62a0cf9b879d5e515bd9655bbc01252",
+      "class_names_sha256": "f17d4340f7f21f2940105c9ee45d39f273a2d51bcc1d24200a41cc7d649396dd"
+    }
+  },
+  "check_3_hog_and_file_duplicates": {
+    "exact_hog_duplicates_between_val_and_fit": 128,
+    "exact_hog_duplicates_within_fit": 270,
+    "exact_hog_duplicates_within_val": 24,
+    "exact_hog_duplicates_within_all_train": 409,
+    "exact_image_file_sha256_duplicates_between_val_and_fit": 128,
+    "exact_image_file_sha256_duplicates_within_fit": 270,
+    "exact_image_file_sha256_duplicates_within_val": 24,
+    "val_to_fit_nearest_neighbor_hog_similarity": {
+      "l2_distance_min": 0.0,
+      "l2_distance_median": 1.2909679534661156,
+      "l2_distance_mean": 1.3288527555957848,
+      "l2_distance_max": 3.5289946972795496,
+      "cosine_similarity_min": 0.8729203723407716,
+      "cosine_similarity_median": 0.9828452191204299,
+      "cosine_similarity_mean": 0.9798669591311912,
+      "cosine_similarity_max": 1.0000000000000002,
+      "nn_same_class_count": 5759,
+      "nn_same_class_ratio": 0.9998263888888889,
+      "nn_same_prefix_and_class_count": 5703,
+      "nn_same_prefix_and_class_ratio": 0.9901041666666667,
+      "nn_sequence_number_diff_le_2_count": 2087,
+      "nn_sequence_number_diff_le_2_ratio": 0.3623263888888889
+    }
+  },
+  "check_4_metadata_and_filename_analysis": {
+    "npz_stores_image_paths": false,
+    "external_metadata_files_found": false,
+    "path_reconstruction_verified": {
+      "class_names_match": true,
+      "y_train_order_matches_100_percent": true,
+      "y_test_order_matches_100_percent": true,
+      "train_hog_spot_check_passed": "108/108",
+      "test_hog_spot_check_passed": "36/36"
+    },
+    "filename_pattern": "{P1..P10}_{class}_{1..1000}.jpg",
+    "unmatched_train_filenames": 0,
+    "unmatched_test_filenames": 0,
+    "prefix_tokens": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10"
+    ],
+    "prefix_sequence_number_ranges": {
+      "P1": [
+        1,
+        100
+      ],
+      "P2": [
+        101,
+        200
+      ],
+      "P3": [
+        201,
+        300
+      ],
+      "P4": [
+        301,
+        400
+      ],
+      "P5": [
+        401,
+        500
+      ],
+      "P6": [
+        501,
+        600
+      ],
+      "P7": [
+        601,
+        700
+      ],
+      "P8": [
+        701,
+        800
+      ],
+      "P9": [
+        801,
+        900
+      ],
+      "P10": [
+        901,
+        1000
+      ]
+    },
+    "prefix_counts_in_fit": {
+      "P1": 2345,
+      "P2": 2294,
+      "P3": 2312,
+      "P4": 2277,
+      "P5": 2287,
+      "P6": 2311,
+      "P7": 2278,
+      "P8": 2296,
+      "P9": 2353,
+      "P10": 2287
+    },
+    "prefix_counts_in_validation": {
+      "P1": 581,
+      "P2": 582,
+      "P3": 579,
+      "P4": 561,
+      "P5": 567,
+      "P6": 604,
+      "P7": 566,
+      "P8": 588,
+      "P9": 529,
+      "P10": 603
+    },
+    "prefix_counts_in_test": {
+      "P1": 674,
+      "P2": 724,
+      "P3": 709,
+      "P4": 762,
+      "P5": 746,
+      "P6": 685,
+      "P7": 756,
+      "P8": 716,
+      "P9": 718,
+      "P10": 710
+    },
+    "total_prefix_class_groups": 360,
+    "prefix_class_groups_in_both_fit_and_val": 360,
+    "prefix_class_groups_in_all_three_splits": 360,
+    "val_samples_with_adjacent_seq_num_pm1_in_fit": 4980,
+    "val_samples_with_adjacent_seq_num_pm1_ratio": 0.8645833333333334,
+    "example_adjacent_nearest_neighbors": [
+      {
+        "validation_index": 1185,
+        "validation_file": "P4_1_373.jpg",
+        "nearest_fit_index": 1186,
+        "nearest_fit_file": "P4_1_374.jpg",
+        "hog_l2_distance": 0.9718678790756146,
+        "hog_cosine_similarity": 0.9903619674886195
+      },
+      {
+        "validation_index": 8350,
+        "validation_file": "P4_A_328.jpg",
+        "nearest_fit_index": 8351,
+        "nearest_fit_file": "P4_A_329.jpg",
+        "hog_l2_distance": 1.7413948719537151,
+        "hog_cosine_similarity": 0.9690565702635732
+      },
+      {
+        "validation_index": 6034,
+        "validation_file": "P5_7_454.jpg",
+        "nearest_fit_index": 6035,
+        "nearest_fit_file": "P5_7_455.jpg",
+        "hog_l2_distance": 1.5725958991926205,
+        "hog_cosine_similarity": 0.9747647157347384
+      },
+      {
+        "validation_index": 21389,
+        "validation_file": "P7_Q_644.jpg",
+        "nearest_fit_index": 21390,
+        "nearest_fit_file": "P7_Q_645.jpg",
+        "hog_l2_distance": 1.5833656468246575,
+        "hog_cosine_similarity": 0.9744178902320344
+      },
+      {
+        "validation_index": 25565,
+        "validation_file": "P9_V_848.jpg",
+        "nearest_fit_index": 25566,
+        "nearest_fit_file": "P9_V_849.jpg",
+        "hog_l2_distance": 1.1723457998110922,
+        "hog_cosine_similarity": 0.9859755645353647
+      }
+    ],
+    "signer_identity_verified": false,
+    "limitation_note": "No official metadata file confirms whether P1..P10 denote 10 signers, 10 recording sessions, or 10 batches. However, all 360 (P_k, class) series are split across fit (80 of 100 images in train), validation (~16 images), and test (20 images), with consecutive sequence numbers interleaved across splits."
+  }
+}

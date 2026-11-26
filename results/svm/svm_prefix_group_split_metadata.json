@@ -1,0 +1,253 @@
+{
+  "split_name": "prefix_group_validation_split",
+  "terminology_note": "P1..P10 are referred to as filename prefix groups ('nhóm tiền tố tên file') because no local README/metadata file accompanies the dataset archive, and 131 byte-identical files exist across P5 and P6 in classes I and V.",
+  "split_rule": {
+    "splitter": "sklearn.model_selection.GroupShuffleSplit",
+    "n_splits": 1,
+    "test_size": 0.2,
+    "random_state": 42,
+    "group_column": "prefix_group (P1..P10)",
+    "selected_before_model_evaluation": true
+  },
+  "manifest_verification": {
+    "manifest_csv": "results\\svm\\svm_train_image_manifest.csv",
+    "manifest_sha256": "e88339f4e26c4a4dc544bc67b512782f9d34c81bb181e081effde38b2dc0d43c",
+    "total_train_rows": 28800,
+    "y_train_exact_match": true,
+    "total_prefix_class_blocks": 360,
+    "boundary_hog_vectors_verified": 720,
+    "boundary_hog_bitwise_match_ratio": 1.0
+  },
+  "data_fingerprints": {
+    "features_file": "data\\processed\\svm_hog_features.npz",
+    "features_file_sha256": "096667c46efa4a3d160043fc1c5c32ce9febf1c910d179a2a0191f036db16402",
+    "X_train_sha256": "76cfd91db0907e1640174a938ec343e23b1b2a68b941fee555bf374f3d144ec9",
+    "y_train_sha256": "c12cfcd6ca3c7f93f830d1d88c20898fa7f0268e2b8dcf10e12f7a7332d16dc8"
+  },
+  "split_summary": {
+    "fit_prefix_groups": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P9"
+    ],
+    "validation_prefix_groups": [
+      "P8",
+      "P10"
+    ],
+    "fit_group_count": 8,
+    "validation_group_count": 2,
+    "prefix_group_overlap_count": 0,
+    "fit_samples": 23026,
+    "validation_samples": 5774,
+    "fit_sample_ratio": 0.7995138888888889,
+    "validation_sample_ratio": 0.20048611111111111,
+    "index_overlap_count": 0,
+    "fit_class_count": 36,
+    "validation_class_count": 36,
+    "fit_samples_per_class_min": 628,
+    "fit_samples_per_class_max": 657,
+    "validation_samples_per_class_min": 143,
+    "validation_samples_per_class_max": 172,
+    "fit_samples_by_prefix": {
+      "P1": 2926,
+      "P2": 2876,
+      "P3": 2891,
+      "P4": 2838,
+      "P5": 2854,
+      "P6": 2915,
+      "P7": 2844,
+      "P9": 2882
+    },
+    "validation_samples_by_prefix": {
+      "P8": 2884,
+      "P10": 2890
+    },
+    "fit_samples_by_class": {
+      "0": 642,
+      "1": 639,
+      "2": 643,
+      "3": 643,
+      "4": 643,
+      "5": 639,
+      "6": 638,
+      "7": 640,
+      "8": 634,
+      "9": 637,
+      "A": 636,
+      "B": 628,
+      "C": 634,
+      "D": 639,
+      "E": 644,
+      "F": 644,
+      "G": 637,
+      "H": 638,
+      "I": 637,
+      "J": 634,
+      "K": 647,
+      "L": 646,
+      "M": 643,
+      "N": 629,
+      "O": 657,
+      "P": 644,
+      "Q": 639,
+      "R": 648,
+      "S": 644,
+      "T": 638,
+      "U": 636,
+      "V": 638,
+      "W": 631,
+      "X": 644,
+      "Y": 634,
+      "Z": 639
+    },
+    "validation_samples_by_class": {
+      "0": 158,
+      "1": 161,
+      "2": 157,
+      "3": 157,
+      "4": 157,
+      "5": 161,
+      "6": 162,
+      "7": 160,
+      "8": 166,
+      "9": 163,
+      "A": 164,
+      "B": 172,
+      "C": 166,
+      "D": 161,
+      "E": 156,
+      "F": 156,
+      "G": 163,
+      "H": 162,
+      "I": 163,
+      "J": 166,
+      "K": 153,
+      "L": 154,
+      "M": 157,
+      "N": 171,
+      "O": 143,
+      "P": 156,
+      "Q": 161,
+      "R": 152,
+      "S": 156,
+      "T": 162,
+      "U": 164,
+      "V": 162,
+      "W": 169,
+      "X": 156,
+      "Y": 166,
+      "Z": 161
+    }
+  },
+  "duplicate_and_similarity_audit": {
+    "exact_file_sha256_duplicates_between_fit_and_validation": 0,
+    "exact_hog_duplicates_between_fit_and_validation": 0,
+    "within_fit_file_sha256_duplicates": 309,
+    "within_validation_file_sha256_duplicates": 100,
+    "all_train_cross_prefix_sha256_duplicate_clusters_count": 131,
+    "all_train_cross_prefix_duplicate_pairs_by_group": {
+      "P5-P6": 131
+    },
+    "cross_prefix_duplicate_note": "Across all 45 pairs of prefix groups in X_train, only (P5, P6) shares cross-group duplicate files (131 pairs: 67 in class I, 64 in class V). Because both P5 and P6 are placed in fit under the fixed GroupShuffleSplit rule, there are 0 file SHA-256 duplicates and 0 HOG duplicates between fit and validation.",
+    "sample_p5_p6_cross_prefix_duplicates_inside_fit": [
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_name": "I",
+        "filenames": [
+          "P5_I_401.jpg",
+          "P6_I_501.jpg"
+        ],
+        "row_indices": [
+          14795,
+          14881
+        ],
+        "file_sha256": "c831091ddd5a97cb0d184bf379ff5175a6da72bc91c9003b4107a0d1bf0a270f"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_name": "I",
+        "filenames": [
+          "P5_I_403.jpg",
+          "P6_I_503.jpg"
+        ],
+        "row_indices": [
+          14797,
+          14882
+        ],
+        "file_sha256": "6a7f4805f0efd3cc78f7181d69d2a1e9c660bd048cfef61e6ee458f272a8f383"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_name": "I",
+        "filenames": [
+          "P5_I_404.jpg",
+          "P6_I_504.jpg"
+        ],
+        "row_indices": [
+          14798,
+          14883
+        ],
+        "file_sha256": "8f799bcb7560bf1cbe7d4a44f7538916f2ab25c645683b76dbe5dd340dec555d"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_name": "I",
+        "filenames": [
+          "P5_I_407.jpg",
+          "P6_I_507.jpg"
+        ],
+        "row_indices": [
+          14801,
+          14884
+        ],
+        "file_sha256": "6601cf83045bb0d7074a55b5b5307217e2eaa150ec5fff04e29d618efe9fed6e"
+      },
+      {
+        "groups": [
+          "P5",
+          "P6"
+        ],
+        "class_name": "I",
+        "filenames": [
+          "P5_I_408.jpg",
+          "P6_I_508.jpg"
+        ],
+        "row_indices": [
+          14802,
+          14885
+        ],
+        "file_sha256": "6f4e0b92ab937af2d3bb9b5da4abbe21d22ade59ee28d1160d96215673d74728"
+      }
+    ],
+    "val_to_fit_nearest_neighbor_hog_similarity": {
+      "l2_distance_min": 2.3968404165744,
+      "l2_distance_median": 4.470186168983348,
+      "l2_distance_mean": 4.457905818285609,
+      "l2_distance_max": 6.324594570799246,
+      "cosine_similarity_min": 0.5918316697487223,
+      "cosine_similarity_median": 0.794993092324149,
+      "cosine_similarity_mean": 0.7896482526678621,
+      "cosine_similarity_max": 0.9302095443300015,
+      "nn_same_class_count": 3556,
+      "nn_same_class_ratio": 0.6158642189123658
+    }
+  },
+  "test_set_limitation": "The original 7,200-sample test set in asl_processed/test contains all 10 prefix groups (P1..P10) interleaved with the training set. Therefore, while this prefix-group validation split removes prefix overlap between fit and validation for hyperparameter selection, the shared team test set remains an in-distribution / shared-prefix test set rather than an unseen-group test set."
+}

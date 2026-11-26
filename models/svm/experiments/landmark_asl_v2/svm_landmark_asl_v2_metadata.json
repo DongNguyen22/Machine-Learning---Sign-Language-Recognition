@@ -1,0 +1,120 @@
+{
+  "experiment": "direction_a_phase2b_landmark_geom_v2_svm",
+  "candidate_id": "v2_rbf_C1_g0.005_flip",
+  "model_path": "models/svm/experiments/landmark_asl_v2/svm_landmark_asl_v2.joblib",
+  "model_sha256": "67d98542dc9c0fafb8f8c0ddfd79bdc3775a344447b72f9fede5d86a861802a9",
+  "model_family": "Pipeline(StandardScaler + SVC(rbf))",
+  "pipeline_steps": [
+    "scaler:StandardScaler",
+    "clf:SVC"
+  ],
+  "feature_schema": "mediapipe_21_xy_geom_v2",
+  "base_xy_schema": "mediapipe_21_xy_wrist_norm_aspect_v2",
+  "feature_dim": 86,
+  "feature_breakdown": {
+    "xy_normalized_coords": 42,
+    "pairwise_fingertip_distances": 10,
+    "fingertip_to_wrist_distances": 5,
+    "fingertip_to_mcp_distances": 5,
+    "thumb_tip_to_knuckle_distances": 5,
+    "joint_bend_cosines": 15,
+    "adjacent_finger_splay_cosines": 4,
+    "total": 86
+  },
+  "mediapipe_version": "1.2.3",
+  "border_pad_ratio": 0.5,
+  "min_detection_confidence": 0.30000001192092896,
+  "hand_landmarker_model": "C:\\Users\\Quang Diep\\Machine-Learning---Sign-Language-Recognition\\results\\svm\\hand_landmarker.task",
+  "class_names": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "class_count": 36,
+  "aug_mode": "flip",
+  "rotation_angles_deg": [
+    0.0
+  ],
+  "augment_horizontal_flip": true,
+  "hyperparameters": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": 0.005,
+    "random_state": 42,
+    "probability": false,
+    "decision_function_shape": "ovr"
+  },
+  "split_config": {
+    "cache_path": "results/svm/experiments/landmark_asl_v1/asl_landmarks_cache.npz",
+    "cache_sha256": "a9179404a44e6670a3f99aa2f8a5e99ad09cb1b47b5e124586be86526af06608",
+    "train_prefix_groups": [
+      "P1",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P9"
+    ],
+    "validation_prefix_groups": [
+      "P8",
+      "P10"
+    ],
+    "test_prefix_groups": [
+      "P2",
+      "P7"
+    ],
+    "train_detected_raw": 20803,
+    "train_samples_fitted": 41606,
+    "validation_detected": 6932,
+    "validation_total": 7200,
+    "test_detected": 6742,
+    "test_total": 7200
+  },
+  "fit_seconds": 9.349,
+  "convergence_warnings": 1,
+  "validation_selection_summary": {
+    "v1_baseline_combined_macro_f1": 0.792154,
+    "val_orig_cond_accuracy": 0.882141,
+    "val_orig_cond_macro_f1": 0.871493,
+    "val_orig_e2e_accuracy": 0.849306,
+    "val_mirrored_cond_accuracy": 0.882141,
+    "val_mirrored_cond_macro_f1": 0.871452,
+    "val_mirrored_e2e_accuracy": 0.849306,
+    "combined_val_cond_macro_f1": 0.871472,
+    "delta_vs_v1_combined_f1": 0.079318
+  },
+  "created_at": "2026-11-26T17:37:58"
+}

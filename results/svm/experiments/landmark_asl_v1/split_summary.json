@@ -1,0 +1,394 @@
+{
+  "split_rule": {
+    "strategy": "connected_component_prefix_group_split",
+    "super_groups": {
+      "P1": [
+        "P1"
+      ],
+      "P10": [
+        "P10"
+      ],
+      "P2": [
+        "P2"
+      ],
+      "P3": [
+        "P3"
+      ],
+      "P4": [
+        "P4"
+      ],
+      "P5+P6": [
+        "P5",
+        "P6"
+      ],
+      "P7": [
+        "P7"
+      ],
+      "P8": [
+        "P8"
+      ],
+      "P9": [
+        "P9"
+      ]
+    },
+    "merged_cross_prefix_super_groups": [
+      "P5+P6"
+    ],
+    "train_prefix_groups": [
+      "P1",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P9"
+    ],
+    "validation_prefix_groups": [
+      "P8",
+      "P10"
+    ],
+    "test_prefix_groups": [
+      "P2",
+      "P7"
+    ]
+  },
+  "leakage_verification": {
+    "prefix_group_overlap_count": 0,
+    "sha256_overlap_count": 0,
+    "zero_prefix_group_leakage": true,
+    "zero_sha256_leakage": true
+  },
+  "splits": {
+    "train": {
+      "prefix_groups": [
+        "P1",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P9"
+      ],
+      "prefix_group_count": 6,
+      "total_images": 21600,
+      "detected_images": 20803,
+      "undetected_images": 797,
+      "detection_rate": 0.963102,
+      "classes_present_total": 36,
+      "classes_present_detected": 36,
+      "missing_classes_total": [],
+      "missing_classes_detected": [],
+      "low_detection_classes_under_70pct": [
+        {
+          "class": "0",
+          "detected": 403,
+          "total": 600,
+          "rate": 0.6717
+        }
+      ],
+      "min_detected_per_class": 403,
+      "max_detected_per_class": 600,
+      "per_class_total": {
+        "0": 600,
+        "1": 600,
+        "2": 600,
+        "3": 600,
+        "4": 600,
+        "5": 600,
+        "6": 600,
+        "7": 600,
+        "8": 600,
+        "9": 600,
+        "A": 600,
+        "B": 600,
+        "C": 600,
+        "D": 600,
+        "E": 600,
+        "F": 600,
+        "G": 600,
+        "H": 600,
+        "I": 600,
+        "J": 600,
+        "K": 600,
+        "L": 600,
+        "M": 600,
+        "N": 600,
+        "O": 600,
+        "P": 600,
+        "Q": 600,
+        "R": 600,
+        "S": 600,
+        "T": 600,
+        "U": 600,
+        "V": 600,
+        "W": 600,
+        "X": 600,
+        "Y": 600,
+        "Z": 600
+      },
+      "per_class_detected": {
+        "0": 403,
+        "1": 578,
+        "2": 600,
+        "3": 600,
+        "4": 600,
+        "5": 600,
+        "6": 600,
+        "7": 600,
+        "8": 600,
+        "9": 600,
+        "A": 600,
+        "B": 600,
+        "C": 599,
+        "D": 600,
+        "E": 600,
+        "F": 600,
+        "G": 544,
+        "H": 600,
+        "I": 600,
+        "J": 600,
+        "K": 600,
+        "L": 600,
+        "M": 500,
+        "N": 600,
+        "O": 529,
+        "P": 468,
+        "Q": 487,
+        "R": 572,
+        "S": 598,
+        "T": 570,
+        "U": 600,
+        "V": 600,
+        "W": 600,
+        "X": 599,
+        "Y": 600,
+        "Z": 556
+      }
+    },
+    "validation": {
+      "prefix_groups": [
+        "P8",
+        "P10"
+      ],
+      "prefix_group_count": 2,
+      "total_images": 7200,
+      "detected_images": 6932,
+      "undetected_images": 268,
+      "detection_rate": 0.962778,
+      "classes_present_total": 36,
+      "classes_present_detected": 36,
+      "missing_classes_total": [],
+      "missing_classes_detected": [],
+      "low_detection_classes_under_70pct": [
+        {
+          "class": "0",
+          "detected": 76,
+          "total": 200,
+          "rate": 0.38
+        },
+        {
+          "class": "P",
+          "detected": 108,
+          "total": 200,
+          "rate": 0.54
+        }
+      ],
+      "min_detected_per_class": 76,
+      "max_detected_per_class": 200,
+      "per_class_total": {
+        "0": 200,
+        "1": 200,
+        "2": 200,
+        "3": 200,
+        "4": 200,
+        "5": 200,
+        "6": 200,
+        "7": 200,
+        "8": 200,
+        "9": 200,
+        "A": 200,
+        "B": 200,
+        "C": 200,
+        "D": 200,
+        "E": 200,
+        "F": 200,
+        "G": 200,
+        "H": 200,
+        "I": 200,
+        "J": 200,
+        "K": 200,
+        "L": 200,
+        "M": 200,
+        "N": 200,
+        "O": 200,
+        "P": 200,
+        "Q": 200,
+        "R": 200,
+        "S": 200,
+        "T": 200,
+        "U": 200,
+        "V": 200,
+        "W": 200,
+        "X": 200,
+        "Y": 200,
+        "Z": 200
+      },
+      "per_class_detected": {
+        "0": 76,
+        "1": 200,
+        "2": 200,
+        "3": 200,
+        "4": 200,
+        "5": 200,
+        "6": 200,
+        "7": 200,
+        "8": 200,
+        "9": 200,
+        "A": 200,
+        "B": 200,
+        "C": 200,
+        "D": 200,
+        "E": 200,
+        "F": 200,
+        "G": 200,
+        "H": 166,
+        "I": 200,
+        "J": 200,
+        "K": 200,
+        "L": 200,
+        "M": 200,
+        "N": 200,
+        "O": 196,
+        "P": 108,
+        "Q": 186,
+        "R": 200,
+        "S": 200,
+        "T": 200,
+        "U": 200,
+        "V": 200,
+        "W": 200,
+        "X": 200,
+        "Y": 200,
+        "Z": 200
+      }
+    },
+    "test": {
+      "prefix_groups": [
+        "P2",
+        "P7"
+      ],
+      "prefix_group_count": 2,
+      "total_images": 7200,
+      "detected_images": 6742,
+      "undetected_images": 458,
+      "detection_rate": 0.936389,
+      "classes_present_total": 36,
+      "classes_present_detected": 36,
+      "missing_classes_total": [],
+      "missing_classes_detected": [],
+      "low_detection_classes_under_70pct": [
+        {
+          "class": "0",
+          "detected": 94,
+          "total": 200,
+          "rate": 0.47
+        },
+        {
+          "class": "G",
+          "detected": 130,
+          "total": 200,
+          "rate": 0.65
+        },
+        {
+          "class": "O",
+          "detected": 139,
+          "total": 200,
+          "rate": 0.695
+        },
+        {
+          "class": "P",
+          "detected": 99,
+          "total": 200,
+          "rate": 0.495
+        }
+      ],
+      "min_detected_per_class": 94,
+      "max_detected_per_class": 200,
+      "per_class_total": {
+        "0": 200,
+        "1": 200,
+        "2": 200,
+        "3": 200,
+        "4": 200,
+        "5": 200,
+        "6": 200,
+        "7": 200,
+        "8": 200,
+        "9": 200,
+        "A": 200,
+        "B": 200,
+        "C": 200,
+        "D": 200,
+        "E": 200,
+        "F": 200,
+        "G": 200,
+        "H": 200,
+        "I": 200,
+        "J": 200,
+        "K": 200,
+        "L": 200,
+        "M": 200,
+        "N": 200,
+        "O": 200,
+        "P": 200,
+        "Q": 200,
+        "R": 200,
+        "S": 200,
+        "T": 200,
+        "U": 200,
+        "V": 200,
+        "W": 200,
+        "X": 200,
+        "Y": 200,
+        "Z": 200
+      },
+      "per_class_detected": {
+        "0": 94,
+        "1": 200,
+        "2": 149,
+        "3": 200,
+        "4": 200,
+        "5": 200,
+        "6": 200,
+        "7": 200,
+        "8": 200,
+        "9": 200,
+        "A": 200,
+        "B": 200,
+        "C": 197,
+        "D": 200,
+        "E": 192,
+        "F": 200,
+        "G": 130,
+        "H": 200,
+        "I": 200,
+        "J": 200,
+        "K": 200,
+        "L": 200,
+        "M": 200,
+        "N": 200,
+        "O": 139,
+        "P": 99,
+        "Q": 188,
+        "R": 199,
+        "S": 200,
+        "T": 200,
+        "U": 199,
+        "V": 175,
+        "W": 200,
+        "X": 181,
+        "Y": 200,
+        "Z": 200
+      }
+    }
+  },
+  "original_test_7200_usability_note": "Tập test gốc 7.200 ảnh trong asl_processed/test KHÔNG thể dùng làm tập test tách nhóm độc lập vì cả 10/10 prefix-group (P1..P10) đều xuất hiện xen kẽ ở cả train gốc lẫn test gốc và có ảnh trùng SHA-256 giữa hai tập. Do đó thí nghiệm Hướng A bắt buộc dùng phép chia train/validation/test tách hẳn theo nhóm (super-group) này để đánh giá tổng quát hóa theo người/nhóm chưa từng thấy."
+}

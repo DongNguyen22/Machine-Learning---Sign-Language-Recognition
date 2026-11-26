@@ -1,0 +1,125 @@
+{
+  "note": "mediapipe_handedness được MediaPipe Tasks HandLandmarker gán trên ảnh gốc chưa lật của asl_processed (chỉ tính trên mẫu detected=True).",
+  "by_split": {
+    "train": {
+      "detected_total": 20803,
+      "counts": {
+        "Left": 66,
+        "Right": 20737
+      },
+      "percentages": {
+        "Left": 0.32,
+        "Right": 99.68
+      },
+      "left_count": 66,
+      "right_count": 20737,
+      "other_count": 0,
+      "left_pct": 0.32,
+      "right_pct": 99.68
+    },
+    "validation": {
+      "detected_total": 6932,
+      "counts": {
+        "Left": 29,
+        "Right": 6903
+      },
+      "percentages": {
+        "Left": 0.42,
+        "Right": 99.58
+      },
+      "left_count": 29,
+      "right_count": 6903,
+      "other_count": 0,
+      "left_pct": 0.42,
+      "right_pct": 99.58
+    },
+    "test": {
+      "detected_total": 6742,
+      "counts": {
+        "Left": 17,
+        "Right": 6725
+      },
+      "percentages": {
+        "Left": 0.25,
+        "Right": 99.75
+      },
+      "left_count": 17,
+      "right_count": 6725,
+      "other_count": 0,
+      "left_pct": 0.25,
+      "right_pct": 99.75
+    }
+  },
+  "by_prefix_group": {
+    "P1": {
+      "detected_total": 3467,
+      "left_count": 29,
+      "right_count": 3438,
+      "left_pct": 0.84,
+      "right_pct": 99.16
+    },
+    "P2": {
+      "detected_total": 3376,
+      "left_count": 1,
+      "right_count": 3375,
+      "left_pct": 0.03,
+      "right_pct": 99.97
+    },
+    "P3": {
+      "detected_total": 3193,
+      "left_count": 1,
+      "right_count": 3192,
+      "left_pct": 0.03,
+      "right_pct": 99.97
+    },
+    "P4": {
+      "detected_total": 3501,
+      "left_count": 4,
+      "right_count": 3497,
+      "left_pct": 0.11,
+      "right_pct": 99.89
+    },
+    "P5": {
+      "detected_total": 3598,
+      "left_count": 32,
+      "right_count": 3566,
+      "left_pct": 0.89,
+      "right_pct": 99.11
+    },
+    "P6": {
+      "detected_total": 3600,
+      "left_count": 0,
+      "right_count": 3600,
+      "left_pct": 0.0,
+      "right_pct": 100.0
+    },
+    "P7": {
+      "detected_total": 3366,
+      "left_count": 16,
+      "right_count": 3350,
+      "left_pct": 0.48,
+      "right_pct": 99.52
+    },
+    "P8": {
+      "detected_total": 3506,
+      "left_count": 1,
+      "right_count": 3505,
+      "left_pct": 0.03,
+      "right_pct": 99.97
+    },
+    "P9": {
+      "detected_total": 3444,
+      "left_count": 0,
+      "right_count": 3444,
+      "left_pct": 0.0,
+      "right_pct": 100.0
+    },
+    "P10": {
+      "detected_total": 3426,
+      "left_count": 28,
+      "right_count": 3398,
+      "left_pct": 0.82,
+      "right_pct": 99.18
+    }
+  }
+}

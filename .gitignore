@@ -75,12 +75,11 @@ target/
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data from source control by default
-# this is commented out for the sake of this demo - recommend adding
-/data/
+# Large generated feature files (keep existing tracked sample data)
+data/processed/svm_hog_features.npz
 .venv/
-__pycache__/
-*.pyc
+.pytest_cache/
+node_modules/
 # Mac OS-specific storage files
 .DS_Store
 
@@ -91,5 +90,18 @@ __pycache__/
 # Mypy cache
 .mypy_cache/
 
-# Other
-.vscode/
+# Local code-graph tool output
+graphify-out/
+
+# Local webcam images & test diagnostics (privacy & repo size)
+data/webcam_pilot/
+data/webcam_collection/
+data/webcam_eval_36/
+results/svm/webcam_diagnostics/
+results/svm/http_tests/
+
+# Large regenerable/downloadable artifacts
+results/svm/hand_landmarker.task
+results/svm/experiments/landmark_asl_v1/asl_landmarks_cache.npz
+results/svm/experiments/landmark_asl_v1/split_manifest.csv
+

@@ -1,0 +1,1526 @@
+{
+  "split_strategy": "participant_grouped",
+  "participant_assignment": {},
+  "coverage_summary": {
+    "total_rows": 15,
+    "unconfirmed_rows": 0,
+    "missing_metadata_rows": 0,
+    "distinct_participants_count": 1,
+    "distinct_participants": [
+      "P01"
+    ],
+    "participant_split_possible": false,
+    "confirmed_by_class": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "A": 3,
+      "B": 6,
+      "C": 3,
+      "D": 3,
+      "E": 0,
+      "F": 0,
+      "G": 0,
+      "H": 0,
+      "I": 0,
+      "J": 0,
+      "K": 0,
+      "L": 0,
+      "M": 0,
+      "N": 0,
+      "O": 0,
+      "P": 0,
+      "Q": 0,
+      "R": 0,
+      "S": 0,
+      "T": 0,
+      "U": 0,
+      "V": 0,
+      "W": 0,
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "total_by_class": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "A": 3,
+      "B": 6,
+      "C": 3,
+      "D": 3,
+      "E": 0,
+      "F": 0,
+      "G": 0,
+      "H": 0,
+      "I": 0,
+      "J": 0,
+      "K": 0,
+      "L": 0,
+      "M": 0,
+      "N": 0,
+      "O": 0,
+      "P": 0,
+      "Q": 0,
+      "R": 0,
+      "S": 0,
+      "T": 0,
+      "U": 0,
+      "V": 0,
+      "W": 0,
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "distinct_participants_by_class": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "A": 1,
+      "B": 1,
+      "C": 1,
+      "D": 1,
+      "E": 0,
+      "F": 0,
+      "G": 0,
+      "H": 0,
+      "I": 0,
+      "J": 0,
+      "K": 0,
+      "L": 0,
+      "M": 0,
+      "N": 0,
+      "O": 0,
+      "P": 0,
+      "Q": 0,
+      "R": 0,
+      "S": 0,
+      "T": 0,
+      "U": 0,
+      "V": 0,
+      "W": 0,
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "distinct_gesture_instances_by_class": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "A": 3,
+      "B": 3,
+      "C": 3,
+      "D": 3,
+      "E": 0,
+      "F": 0,
+      "G": 0,
+      "H": 0,
+      "I": 0,
+      "J": 0,
+      "K": 0,
+      "L": 0,
+      "M": 0,
+      "N": 0,
+      "O": 0,
+      "P": 0,
+      "Q": 0,
+      "R": 0,
+      "S": 0,
+      "T": 0,
+      "U": 0,
+      "V": 0,
+      "W": 0,
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "present_confirmed_classes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "missing_confirmed_classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "missing_confirmed_classes_count": 32
+  },
+  "errors": [
+    "Cần ít nhất 3 participant_id khác nhau để chia train/validation/test theo người (hiện chỉ có 1: ['P01']).",
+    "sample_022693ec959b4609860732cb99b78749: participant needs explicit train/validation/test assignment",
+    "sample_0bbc9f6abdf14b03849a4763cfc48a01: participant needs explicit train/validation/test assignment",
+    "sample_1eb16b7f197b4ac3a783c274faf337fa: participant needs explicit train/validation/test assignment",
+    "sample_37da8389467340e0b31ac4c6646b8e3a: participant needs explicit train/validation/test assignment",
+    "sample_3ca80b7631464ab6b8ba3e497889dc5e: participant needs explicit train/validation/test assignment",
+    "sample_41c838ca164042d883192ee0e8aed36a: participant needs explicit train/validation/test assignment",
+    "sample_6246dd689cc047bea9c0afbd637622b3: participant needs explicit train/validation/test assignment",
+    "sample_69a930bb08a84b8f88a80c9a6ffc8ae7: participant needs explicit train/validation/test assignment",
+    "sample_7aa0ecda667b4af89905934c42e3b687: participant needs explicit train/validation/test assignment",
+    "sample_867f8e66fbd24784a50a817f934fecbc: participant needs explicit train/validation/test assignment",
+    "sample_948edd1d667947aab7a8340d8fa3604a: participant needs explicit train/validation/test assignment",
+    "sample_ac33e8b25bc946468ec928147cd66575: participant needs explicit train/validation/test assignment",
+    "sample_ae1dd40c3b6143a8984a5a5acea59355: participant needs explicit train/validation/test assignment",
+    "sample_cb1809cf630c4c25af4e0cba98127244: participant needs explicit train/validation/test assignment",
+    "sample_dd5ee1310f9d489e856e0ead4849da27: participant needs explicit train/validation/test assignment",
+    "train: missing class 0",
+    "train: missing class 1",
+    "train: missing class 2",
+    "train: missing class 3",
+    "train: missing class 4",
+    "train: missing class 5",
+    "train: missing class 6",
+    "train: missing class 7",
+    "train: missing class 8",
+    "train: missing class 9",
+    "train: missing class A",
+    "train: missing class B",
+    "train: missing class C",
+    "train: missing class D",
+    "train: missing class E",
+    "train: missing class F",
+    "train: missing class G",
+    "train: missing class H",
+    "train: missing class I",
+    "train: missing class J",
+    "train: missing class K",
+    "train: missing class L",
+    "train: missing class M",
+    "train: missing class N",
+    "train: missing class O",
+    "train: missing class P",
+    "train: missing class Q",
+    "train: missing class R",
+    "train: missing class S",
+    "train: missing class T",
+    "train: missing class U",
+    "train: missing class V",
+    "train: missing class W",
+    "train: missing class X",
+    "train: missing class Y",
+    "train: missing class Z",
+    "validation: missing class 0",
+    "validation: missing class 1",
+    "validation: missing class 2",
+    "validation: missing class 3",
+    "validation: missing class 4",
+    "validation: missing class 5",
+    "validation: missing class 6",
+    "validation: missing class 7",
+    "validation: missing class 8",
+    "validation: missing class 9",
+    "validation: missing class A",
+    "validation: missing class B",
+    "validation: missing class C",
+    "validation: missing class D",
+    "validation: missing class E",
+    "validation: missing class F",
+    "validation: missing class G",
+    "validation: missing class H",
+    "validation: missing class I",
+    "validation: missing class J",
+    "validation: missing class K",
+    "validation: missing class L",
+    "validation: missing class M",
+    "validation: missing class N",
+    "validation: missing class O",
+    "validation: missing class P",
+    "validation: missing class Q",
+    "validation: missing class R",
+    "validation: missing class S",
+    "validation: missing class T",
+    "validation: missing class U",
+    "validation: missing class V",
+    "validation: missing class W",
+    "validation: missing class X",
+    "validation: missing class Y",
+    "validation: missing class Z",
+    "test: missing class 0",
+    "test: missing class 1",
+    "test: missing class 2",
+    "test: missing class 3",
+    "test: missing class 4",
+    "test: missing class 5",
+    "test: missing class 6",
+    "test: missing class 7",
+    "test: missing class 8",
+    "test: missing class 9",
+    "test: missing class A",
+    "test: missing class B",
+    "test: missing class C",
+    "test: missing class D",
+    "test: missing class E",
+    "test: missing class F",
+    "test: missing class G",
+    "test: missing class H",
+    "test: missing class I",
+    "test: missing class J",
+    "test: missing class K",
+    "test: missing class L",
+    "test: missing class M",
+    "test: missing class N",
+    "test: missing class O",
+    "test: missing class P",
+    "test: missing class Q",
+    "test: missing class R",
+    "test: missing class S",
+    "test: missing class T",
+    "test: missing class U",
+    "test: missing class V",
+    "test: missing class W",
+    "test: missing class X",
+    "test: missing class Y",
+    "test: missing class Z"
+  ],
+  "missing": [
+    {
+      "split": "train",
+      "label": "0",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "1",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "2",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "3",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "4",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "5",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "6",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "7",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "8",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "9",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "A",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "B",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "C",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "D",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "E",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "F",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "G",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "H",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "I",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "J",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "K",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "L",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "M",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "N",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "O",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "P",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "Q",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "R",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "S",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "T",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "U",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "V",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "W",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "X",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "Y",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "train",
+      "label": "Z",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "0",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "1",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "2",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "3",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "4",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "5",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "6",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "7",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "8",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "9",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "A",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "B",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "C",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "D",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "E",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "F",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "G",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "H",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "I",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "J",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "K",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "L",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "M",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "N",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "O",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "P",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "Q",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "R",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "S",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "T",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "U",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "V",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "W",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "X",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "Y",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "validation",
+      "label": "Z",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "0",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "1",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "2",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "3",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "4",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "5",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "6",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "7",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "8",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "9",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "A",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "B",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "C",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "D",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "E",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "F",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "G",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "H",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "I",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "J",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "K",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "L",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "M",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "N",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "O",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "P",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "Q",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "R",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "S",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "T",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "U",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "V",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "W",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "X",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "Y",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    },
+    {
+      "split": "test",
+      "label": "Z",
+      "current_samples": 0,
+      "minimum_additional_samples": 1
+    }
+  ],
+  "counts": [
+    {
+      "split": "train",
+      "label": "0",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "1",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "2",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "3",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "4",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "5",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "6",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "7",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "8",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "9",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "A",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "B",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "C",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "D",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "E",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "F",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "G",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "H",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "I",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "J",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "K",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "L",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "M",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "N",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "O",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "P",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "Q",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "R",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "S",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "T",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "U",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "V",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "W",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "X",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "Y",
+      "count": 0
+    },
+    {
+      "split": "train",
+      "label": "Z",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "0",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "1",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "2",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "3",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "4",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "5",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "6",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "7",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "8",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "9",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "A",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "B",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "C",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "D",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "E",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "F",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "G",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "H",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "I",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "J",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "K",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "L",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "M",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "N",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "O",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "P",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "Q",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "R",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "S",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "T",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "U",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "V",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "W",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "X",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "Y",
+      "count": 0
+    },
+    {
+      "split": "validation",
+      "label": "Z",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "0",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "1",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "2",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "3",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "4",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "5",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "6",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "7",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "8",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "9",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "A",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "B",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "C",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "D",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "E",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "F",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "G",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "H",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "I",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "J",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "K",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "L",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "M",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "N",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "O",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "P",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "Q",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "R",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "S",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "T",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "U",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "V",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "W",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "X",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "Y",
+      "count": 0
+    },
+    {
+      "split": "test",
+      "label": "Z",
+      "count": 0
+    }
+  ],
+  "groups": []
+}

@@ -1,0 +1,807 @@
+{
+  "generated_at": "2026-11-26T18:38:49",
+  "limitation_note": "Các tập ảnh webcam đã xác nhận hiện có chỉ gồm 4 lớp chữ cái (A, B, C, D); chưa có tập kiểm thử webcam đã xác nhận cho 0–9 và 22 chữ cái còn lại.",
+  "excluded_unconfirmed_sets": {
+    "webcam_diagnostics_unconfirmed_excluded": [
+      {
+        "folder_name": "sample_25bf3ba334e347c4a1b67b62ffb1f78e",
+        "label_confirmed": false,
+        "participant_id": "P01",
+        "intended_sign": "A"
+      },
+      {
+        "folder_name": "sample_26c93643a1ec4057913108b4aa5c69c7",
+        "label_confirmed": false,
+        "participant_id": "P01",
+        "intended_sign": "A"
+      },
+      {
+        "folder_name": "sample_97a17d7d84864bc2888403b06a4579d9",
+        "label_confirmed": false,
+        "participant_id": "P01",
+        "intended_sign": "A"
+      },
+      {
+        "folder_name": "sample_d207f4b29f2c4c5aa7a35d0b4d03968c",
+        "label_confirmed": false,
+        "participant_id": "P01",
+        "intended_sign": "A"
+      },
+      {
+        "folder_name": "sample_e0e6cde09b244b958cc58786671d470b",
+        "label_confirmed": false,
+        "participant_id": "P01",
+        "intended_sign": "A"
+      }
+    ],
+    "webcam_collection_unconfirmed_excluded": [
+      {
+        "folder_name": "sample_5bf8133412b346edb05b90c4f5068751",
+        "label_confirmed": false,
+        "participant_id": "P01",
+        "intended_sign": "0"
+      }
+    ],
+    "note": "Các mẫu chưa xác nhận nhãn (label_confirmed=False) được loại khỏi thống kê độ chính xác và tuyệt đối không bị tự ý xác nhận hay sửa nhãn."
+  },
+  "sets": {
+    "webcam_pilot_15": {
+      "title": "data/webcam_pilot (15 mẫu A/B/C/D đã xác nhận, P01/S01, tay trái)",
+      "total_samples": 15,
+      "detected_samples": 14,
+      "detection_rate_pct": 93.33,
+      "summary": {
+        "hog_3b": {
+          "correct": 12,
+          "e2e_pct": 80.0,
+          "cond_pct": 78.57
+        },
+        "v2_36_full": {
+          "correct": 11,
+          "e2e_pct": 73.33,
+          "cond_pct": 78.57
+        },
+        "v2_36_masked": {
+          "correct": 13,
+          "e2e_pct": 86.67,
+          "cond_pct": 92.86
+        },
+        "svm_az": {
+          "correct": 13,
+          "e2e_pct": 86.67,
+          "cond_pct": 92.86
+        }
+      },
+      "per_class": {
+        "A": {
+          "total": 3,
+          "detected": 3,
+          "hog_3b": {
+            "correct": 3,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 3
+            }
+          },
+          "v2_36_full": {
+            "correct": 3,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 3
+            }
+          },
+          "v2_36_masked": {
+            "correct": 3,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 3
+            }
+          },
+          "svm_az": {
+            "correct": 3,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 3
+            }
+          }
+        },
+        "B": {
+          "total": 6,
+          "detected": 6,
+          "hog_3b": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          },
+          "v2_36_full": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          },
+          "v2_36_masked": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          },
+          "svm_az": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          }
+        },
+        "C": {
+          "total": 3,
+          "detected": 2,
+          "hog_3b": {
+            "correct": 3,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "C": 3
+            }
+          },
+          "v2_36_full": {
+            "correct": 2,
+            "e2e_pct": 66.67,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "C": 2,
+              "__NO_HAND__": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 2,
+            "e2e_pct": 66.67,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "C": 2,
+              "__NO_HAND__": 1
+            }
+          },
+          "svm_az": {
+            "correct": 2,
+            "e2e_pct": 66.67,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "C": 2,
+              "__NO_HAND__": 1
+            }
+          }
+        },
+        "D": {
+          "total": 3,
+          "detected": 3,
+          "hog_3b": {
+            "correct": 0,
+            "e2e_pct": 0.0,
+            "cond_pct": 0.0,
+            "pred_dist": {
+              "U": 3
+            }
+          },
+          "v2_36_full": {
+            "correct": 0,
+            "e2e_pct": 0.0,
+            "cond_pct": 0.0,
+            "pred_dist": {
+              "1": 3
+            }
+          },
+          "v2_36_masked": {
+            "correct": 2,
+            "e2e_pct": 66.67,
+            "cond_pct": 66.67,
+            "pred_dist": {
+              "D": 2,
+              "Z": 1
+            }
+          },
+          "svm_az": {
+            "correct": 2,
+            "e2e_pct": 66.67,
+            "cond_pct": 66.67,
+            "pred_dist": {
+              "D": 2,
+              "Z": 1
+            }
+          }
+        }
+      }
+    },
+    "webcam_diagnostics_confirmed_32": {
+      "title": "results/svm/webcam_diagnostics — 32 mẫu độc lập A/B/C/D đã xác nhận (loại trừ 23 mẫu cũ)",
+      "total_samples": 32,
+      "detected_samples": 31,
+      "detection_rate_pct": 96.88,
+      "summary": {
+        "hog_3b": {
+          "correct": 17,
+          "e2e_pct": 53.12,
+          "cond_pct": 51.61
+        },
+        "v2_36_full": {
+          "correct": 17,
+          "e2e_pct": 53.12,
+          "cond_pct": 54.84
+        },
+        "v2_36_masked": {
+          "correct": 20,
+          "e2e_pct": 62.5,
+          "cond_pct": 64.52
+        },
+        "svm_az": {
+          "correct": 20,
+          "e2e_pct": 62.5,
+          "cond_pct": 64.52
+        }
+      },
+      "per_class": {
+        "A": {
+          "total": 5,
+          "detected": 5,
+          "hog_3b": {
+            "correct": 2,
+            "e2e_pct": 40.0,
+            "cond_pct": 40.0,
+            "pred_dist": {
+              "A": 2,
+              "0": 3
+            }
+          },
+          "v2_36_full": {
+            "correct": 5,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 5
+            }
+          },
+          "v2_36_masked": {
+            "correct": 5,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 5
+            }
+          },
+          "svm_az": {
+            "correct": 5,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 5
+            }
+          }
+        },
+        "B": {
+          "total": 6,
+          "detected": 6,
+          "hog_3b": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          },
+          "v2_36_full": {
+            "correct": 5,
+            "e2e_pct": 83.33,
+            "cond_pct": 83.33,
+            "pred_dist": {
+              "B": 5,
+              "0": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          },
+          "svm_az": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 6
+            }
+          }
+        },
+        "C": {
+          "total": 11,
+          "detected": 10,
+          "hog_3b": {
+            "correct": 9,
+            "e2e_pct": 81.82,
+            "cond_pct": 80.0,
+            "pred_dist": {
+              "C": 9,
+              "Q": 2
+            }
+          },
+          "v2_36_full": {
+            "correct": 7,
+            "e2e_pct": 63.64,
+            "cond_pct": 70.0,
+            "pred_dist": {
+              "C": 7,
+              "__NO_HAND__": 1,
+              "0": 3
+            }
+          },
+          "v2_36_masked": {
+            "correct": 9,
+            "e2e_pct": 81.82,
+            "cond_pct": 90.0,
+            "pred_dist": {
+              "C": 9,
+              "__NO_HAND__": 1,
+              "P": 1
+            }
+          },
+          "svm_az": {
+            "correct": 9,
+            "e2e_pct": 81.82,
+            "cond_pct": 90.0,
+            "pred_dist": {
+              "C": 9,
+              "__NO_HAND__": 1,
+              "P": 1
+            }
+          }
+        },
+        "D": {
+          "total": 10,
+          "detected": 10,
+          "hog_3b": {
+            "correct": 0,
+            "e2e_pct": 0.0,
+            "cond_pct": 0.0,
+            "pred_dist": {
+              "0": 6,
+              "1": 2,
+              "V": 2
+            }
+          },
+          "v2_36_full": {
+            "correct": 0,
+            "e2e_pct": 0.0,
+            "cond_pct": 0.0,
+            "pred_dist": {
+              "0": 10
+            }
+          },
+          "v2_36_masked": {
+            "correct": 0,
+            "e2e_pct": 0.0,
+            "cond_pct": 0.0,
+            "pred_dist": {
+              "Z": 7,
+              "M": 1,
+              "N": 2
+            }
+          },
+          "svm_az": {
+            "correct": 0,
+            "e2e_pct": 0.0,
+            "cond_pct": 0.0,
+            "pred_dist": {
+              "Z": 8,
+              "N": 2
+            }
+          }
+        }
+      }
+    },
+    "webcam_diagnostics_old_23": {
+      "title": "results/svm/webcam_diagnostics — 23 mẫu cũ A/B/C/D đã xác nhận (tập từng dùng chọn Cách 3B)",
+      "total_samples": 23,
+      "detected_samples": 23,
+      "detection_rate_pct": 100.0,
+      "summary": {
+        "hog_3b": {
+          "correct": 18,
+          "e2e_pct": 78.26,
+          "cond_pct": 78.26
+        },
+        "v2_36_full": {
+          "correct": 18,
+          "e2e_pct": 78.26,
+          "cond_pct": 78.26
+        },
+        "v2_36_masked": {
+          "correct": 19,
+          "e2e_pct": 82.61,
+          "cond_pct": 82.61
+        },
+        "svm_az": {
+          "correct": 19,
+          "e2e_pct": 82.61,
+          "cond_pct": 82.61
+        }
+      },
+      "per_class": {
+        "A": {
+          "total": 6,
+          "detected": 6,
+          "hog_3b": {
+            "correct": 6,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "A": 6
+            }
+          },
+          "v2_36_full": {
+            "correct": 5,
+            "e2e_pct": 83.33,
+            "cond_pct": 83.33,
+            "pred_dist": {
+              "A": 5,
+              "M": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 5,
+            "e2e_pct": 83.33,
+            "cond_pct": 83.33,
+            "pred_dist": {
+              "A": 5,
+              "M": 1
+            }
+          },
+          "svm_az": {
+            "correct": 5,
+            "e2e_pct": 83.33,
+            "cond_pct": 83.33,
+            "pred_dist": {
+              "A": 5,
+              "M": 1
+            }
+          }
+        },
+        "B": {
+          "total": 5,
+          "detected": 5,
+          "hog_3b": {
+            "correct": 4,
+            "e2e_pct": 80.0,
+            "cond_pct": 80.0,
+            "pred_dist": {
+              "B": 4,
+              "F": 1
+            }
+          },
+          "v2_36_full": {
+            "correct": 5,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 5
+            }
+          },
+          "v2_36_masked": {
+            "correct": 5,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 5
+            }
+          },
+          "svm_az": {
+            "correct": 5,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 5
+            }
+          }
+        },
+        "C": {
+          "total": 7,
+          "detected": 7,
+          "hog_3b": {
+            "correct": 6,
+            "e2e_pct": 85.71,
+            "cond_pct": 85.71,
+            "pred_dist": {
+              "C": 6,
+              "0": 1
+            }
+          },
+          "v2_36_full": {
+            "correct": 6,
+            "e2e_pct": 85.71,
+            "cond_pct": 85.71,
+            "pred_dist": {
+              "C": 6,
+              "0": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 6,
+            "e2e_pct": 85.71,
+            "cond_pct": 85.71,
+            "pred_dist": {
+              "C": 6,
+              "Q": 1
+            }
+          },
+          "svm_az": {
+            "correct": 6,
+            "e2e_pct": 85.71,
+            "cond_pct": 85.71,
+            "pred_dist": {
+              "C": 6,
+              "Q": 1
+            }
+          }
+        },
+        "D": {
+          "total": 5,
+          "detected": 5,
+          "hog_3b": {
+            "correct": 2,
+            "e2e_pct": 40.0,
+            "cond_pct": 40.0,
+            "pred_dist": {
+              "D": 2,
+              "K": 1,
+              "1": 1,
+              "Y": 1
+            }
+          },
+          "v2_36_full": {
+            "correct": 2,
+            "e2e_pct": 40.0,
+            "cond_pct": 40.0,
+            "pred_dist": {
+              "D": 2,
+              "Z": 1,
+              "0": 2
+            }
+          },
+          "v2_36_masked": {
+            "correct": 3,
+            "e2e_pct": 60.0,
+            "cond_pct": 60.0,
+            "pred_dist": {
+              "D": 3,
+              "Z": 2
+            }
+          },
+          "svm_az": {
+            "correct": 3,
+            "e2e_pct": 60.0,
+            "cond_pct": 60.0,
+            "pred_dist": {
+              "D": 3,
+              "Z": 2
+            }
+          }
+        }
+      }
+    },
+    "webcam_diagnostics_legacy_55": {
+      "title": "results/svm/webcam_diagnostics — Toàn bộ 55 mẫu cũ A/B/C/D đã xác nhận (23 cũ + 32 độc lập)",
+      "total_samples": 55,
+      "detected_samples": 54,
+      "detection_rate_pct": 98.18,
+      "summary": {
+        "hog_3b": {
+          "correct": 35,
+          "e2e_pct": 63.64,
+          "cond_pct": 62.96
+        },
+        "v2_36_full": {
+          "correct": 35,
+          "e2e_pct": 63.64,
+          "cond_pct": 64.81
+        },
+        "v2_36_masked": {
+          "correct": 39,
+          "e2e_pct": 70.91,
+          "cond_pct": 72.22
+        },
+        "svm_az": {
+          "correct": 39,
+          "e2e_pct": 70.91,
+          "cond_pct": 72.22
+        }
+      },
+      "per_class": {
+        "A": {
+          "total": 11,
+          "detected": 11,
+          "hog_3b": {
+            "correct": 8,
+            "e2e_pct": 72.73,
+            "cond_pct": 72.73,
+            "pred_dist": {
+              "A": 8,
+              "0": 3
+            }
+          },
+          "v2_36_full": {
+            "correct": 10,
+            "e2e_pct": 90.91,
+            "cond_pct": 90.91,
+            "pred_dist": {
+              "A": 10,
+              "M": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 10,
+            "e2e_pct": 90.91,
+            "cond_pct": 90.91,
+            "pred_dist": {
+              "A": 10,
+              "M": 1
+            }
+          },
+          "svm_az": {
+            "correct": 10,
+            "e2e_pct": 90.91,
+            "cond_pct": 90.91,
+            "pred_dist": {
+              "A": 10,
+              "M": 1
+            }
+          }
+        },
+        "B": {
+          "total": 11,
+          "detected": 11,
+          "hog_3b": {
+            "correct": 10,
+            "e2e_pct": 90.91,
+            "cond_pct": 90.91,
+            "pred_dist": {
+              "B": 10,
+              "F": 1
+            }
+          },
+          "v2_36_full": {
+            "correct": 10,
+            "e2e_pct": 90.91,
+            "cond_pct": 90.91,
+            "pred_dist": {
+              "B": 10,
+              "0": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 11,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 11
+            }
+          },
+          "svm_az": {
+            "correct": 11,
+            "e2e_pct": 100.0,
+            "cond_pct": 100.0,
+            "pred_dist": {
+              "B": 11
+            }
+          }
+        },
+        "C": {
+          "total": 18,
+          "detected": 17,
+          "hog_3b": {
+            "correct": 15,
+            "e2e_pct": 83.33,
+            "cond_pct": 82.35,
+            "pred_dist": {
+              "C": 15,
+              "0": 1,
+              "Q": 2
+            }
+          },
+          "v2_36_full": {
+            "correct": 13,
+            "e2e_pct": 72.22,
+            "cond_pct": 76.47,
+            "pred_dist": {
+              "C": 13,
+              "0": 4,
+              "__NO_HAND__": 1
+            }
+          },
+          "v2_36_masked": {
+            "correct": 15,
+            "e2e_pct": 83.33,
+            "cond_pct": 88.24,
+            "pred_dist": {
+              "C": 15,
+              "Q": 1,
+              "__NO_HAND__": 1,
+              "P": 1
+            }
+          },
+          "svm_az": {
+            "correct": 15,
+            "e2e_pct": 83.33,
+            "cond_pct": 88.24,
+            "pred_dist": {
+              "C": 15,
+              "Q": 1,
+              "__NO_HAND__": 1,
+              "P": 1
+            }
+          }
+        },
+        "D": {
+          "total": 15,
+          "detected": 15,
+          "hog_3b": {
+            "correct": 2,
+            "e2e_pct": 13.33,
+            "cond_pct": 13.33,
+            "pred_dist": {
+              "D": 2,
+              "K": 1,
+              "1": 3,
+              "Y": 1,
+              "0": 6,
+              "V": 2
+            }
+          },
+          "v2_36_full": {
+            "correct": 2,
+            "e2e_pct": 13.33,
+            "cond_pct": 13.33,
+            "pred_dist": {
+              "D": 2,
+              "Z": 1,
+              "0": 12
+            }
+          },
+          "v2_36_masked": {
+            "correct": 3,
+            "e2e_pct": 20.0,
+            "cond_pct": 20.0,
+            "pred_dist": {
+              "D": 3,
+              "Z": 9,
+              "M": 1,
+              "N": 2
+            }
+          },
+          "svm_az": {
+            "correct": 3,
+            "e2e_pct": 20.0,
+            "cond_pct": 20.0,
+            "pred_dist": {
+              "D": 3,
+              "Z": 10,
+              "N": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}
