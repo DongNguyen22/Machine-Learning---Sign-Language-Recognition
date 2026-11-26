@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "name": "mediapipe_hand_geometric_v2",
+  "description": "91 đặc trưng hình học: 63 tọa độ + 15 góc ngón + 10 khoảng cách + 3 thành phần pháp tuyến.",
+  "input_dim": 91,
+  "dtype": "float32",
+  "landmark_count": 21,
+  "coordinate_space": {
+    "origin_landmark_index": 0,
+    "origin_name": "WRIST",
+    "scale_landmark_index": 9,
+    "scale_name": "MAX_DISTANCE_FROM_WRIST",
+    "scale_epsilon": 1e-6,
+    "axes": ["x", "y", "z"],
+    "formula": "p_hat[i] = (p[i] - p[0]) / max(max(||p[i] - p[0]||_2), epsilon)"
+  },
+  "landmarks": [
+    {"index": 0, "name": "WRIST"},
+    {"index": 1, "name": "THUMB_CMC"},
+    {"index": 2, "name": "THUMB_MCP"},
+    {"index": 3, "name": "THUMB_IP"},
+    {"index": 4, "name": "THUMB_TIP"},
+    {"index": 5, "name": "INDEX_FINGER_MCP"},
+    {"index": 6, "name": "INDEX_FINGER_PIP"},
+    {"index": 7, "name": "INDEX_FINGER_DIP"},
+    {"index": 8, "name": "INDEX_FINGER_TIP"},
+    {"index": 9, "name": "MIDDLE_FINGER_MCP"},
+    {"index": 10, "name": "MIDDLE_FINGER_PIP"},
+    {"index": 11, "name": "MIDDLE_FINGER_DIP"},
+    {"index": 12, "name": "MIDDLE_FINGER_TIP"},
+    {"index": 13, "name": "RING_FINGER_MCP"},
+    {"index": 14, "name": "RING_FINGER_PIP"},
+    {"index": 15, "name": "RING_FINGER_DIP"},
+    {"index": 16, "name": "RING_FINGER_TIP"},
+    {"index": 17, "name": "PINKY_MCP"},
+    {"index": 18, "name": "PINKY_PIP"},
+    {"index": 19, "name": "PINKY_DIP"},
+    {"index": 20, "name": "PINKY_TIP"}
+  ],
+  "groups": [
+    {
+      "name": "normalized_landmarks",
+      "start": 0,
+      "end": 63,
+      "size": 63,
+      "description": "Tọa độ đã chuẩn hóa của cả 21 landmark."
+    },
+    {
+      "name": "finger_angles",
+      "start": 63,
+      "end": 78,
+      "size": 15,
+      "description": "15 góc gập đốt ngón, 3 góc cho mỗi ngón."
+    },
+    {
+      "name": "tip_distances",
+      "start": 78,
+      "end": 88,
+      "size": 10,
+      "description": "5 khoảng cách đầu ngón-cổ tay và 5 khoảng cách cặp đầu ngón."
+    },
+    {
+      "name": "palm_normal",
+      "start": 88,
+      "end": 91,
+      "size": 3,
+      "description": "Ba thành phần vector pháp tuyến đơn vị lòng bàn tay."
+    }
+  ]
+}

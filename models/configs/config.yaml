@@ -1,0 +1,62 @@
+# Cấu hình tập trung cho đồ án nhận diện ASL Alphabet (A-Z).
+# Mọi đường dẫn tương đối được neo vào thư mục gốc dự án (thư mục cha của configs/).
+
+project:
+  name: asl-alphabet-recognition
+  version: "0.1.0"
+  description: "Nhận diện ngôn ngữ ký hiệu Mỹ — 26 chữ cái A-Z"
+
+paths:
+  data:
+    raw:
+      kaggle_asl: datasets/raw/kaggle_asl
+      mendeley_asl: datasets/raw/mendeley_asl
+      webcam_real_test: datasets/raw/webcam_real_test
+    processed:
+      dir: datasets/processed
+      features: datasets/processed/features.parquet
+      train: datasets/processed/train.parquet
+      val: datasets/processed/val.parquet
+      test: datasets/processed/test.parquet
+    metadata: datasets/metadata
+  models:
+    checkpoints: models/checkpoints
+    production: models/production
+  reports:
+    figures: reports/figures
+    metrics: reports/metrics
+    logs: reports/logs
+  configs:
+    label_map: configs/label_map.json
+    feature_config: configs/feature_config.json
+
+mediapipe:
+  model_complexity: 0
+  min_detection_confidence: 0.7
+  min_tracking_confidence: 0.6
+  max_num_hands: 1
+
+split:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42
+
+training:
+  mlp:
+    input_dim: 91
+    num_classes: 26
+    batch_size: 64
+    epochs: 100
+    learning_rate: 0.001
+    early_stopping_patience: 12
+    lr_patience: 5
+
+inference:
+  postprocess:
+    ema_alpha: 0.4
+    conf_threshold: 0.75
+    margin_threshold: 0.20
+    window_size: 10
+    min_votes: 7
+    hold_seconds: 1.2

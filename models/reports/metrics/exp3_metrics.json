@@ -1,0 +1,13 @@
+{
+  "exp3_mlp_opt": {
+    "train_loss": 0.5778252482414246,
+    "val_loss": 0.7319796085357666,
+    "train_accuracy": 0.9492753744125366,
+    "val_accuracy": 0.8794326186180115
+  },
+  "exp3_svm_opt": {
+    "train_accuracy": 0.9005763688760807,
+    "val_accuracy": 0.851063829787234,
+    "model_path": "D:\\asl-alphabet-recognition\\models\\production\\exp3_svm_opt.joblib"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "overall": {
+    "total": 1815,
+    "extracted": 989,
+    "failed": 826,
+    "failure_rate": 0.4550964187327824
+  },
+  "by_label": {
+    "A": {
+      "total": 70,
+      "extracted": 37,
+      "failed": 33,
+      "failure_rate": 0.4714285714285714
+    },
+    "B": {
+      "total": 70,
+      "extracted": 70,
+      "failed": 0,
+      "failure_rate": 0.0
+    },
+    "C": {
+      "total": 70,
+      "extracted": 3,
+      "failed": 67,
+      "failure_rate": 0.9571428571428572
+    },
+    "D": {
+      "total": 70,
+      "extracted": 63,
+      "failed": 7,
+      "failure_rate": 0.1
+    },
+    "E": {
+      "total": 70,
+      "extracted": 13,
+      "failed": 57,
+      "failure_rate": 0.8142857142857143
+    },
+    "F": {
+      "total": 70,
+      "extracted": 70,
+      "failed": 0,
+      "failure_rate": 0.0
+    },
+    "G": {
+      "total": 70,
+      "extracted": 42,
+      "failed": 28,
+      "failure_rate": 0.4
+    },
+    "H": {
+      "total": 70,
+      "extracted": 53,
+      "failed": 17,
+      "failure_rate": 0.24285714285714285
+    },
+    "I": {
+      "total": 70,
+      "extracted": 41,
+      "failed": 29,
+      "failure_rate": 0.4142857142857143
+    },
+    "J": {
+      "total": 70,
+      "extracted": 10,
+      "failed": 60,
+      "failure_rate": 0.8571428571428571
+    },
+    "K": {
+      "total": 70,
+      "extracted": 69,
+      "failed": 1,
+      "failure_rate": 0.014285714285714285
+    },
+    "L": {
+      "total": 70,
+      "extracted": 62,
+      "failed": 8,
+      "failure_rate": 0.11428571428571428
+    },
+    "M": {
+      "total": 70,
+      "extracted": 2,
+      "failed": 68,
+      "failure_rate": 0.9714285714285714
+    },
+    "N": {
+      "total": 70,
+      "extracted": 14,
+      "failed": 56,
+      "failure_rate": 0.8
+    },
+    "O": {
+      "total": 70,
+      "extracted": 1,
+      "failed": 69,
+      "failure_rate": 0.9857142857142858
+    },
+    "P": {
+      "total": 70,
+      "extracted": 39,
+      "failed": 31,
+      "failure_rate": 0.44285714285714284
+    },
+    "Q": {
+      "total": 70,
+      "extracted": 5,
+      "failed": 65,
+      "failure_rate": 0.9285714285714286
+    },
+    "R": {
+      "total": 70,
+      "extracted": 66,
+      "failed": 4,
+      "failure_rate": 0.05714285714285714
+    },
+    "S": {
+      "total": 70,
+      "extracted": 11,
+      "failed": 59,
+      "failure_rate": 0.8428571428571429
+    },
+    "T": {
+      "total": 65,
+      "extracted": 14,
+      "failed": 51,
+      "failure_rate": 0.7846153846153846
+    },
+    "U": {
+      "total": 70,
+      "extracted": 66,
+      "failed": 4,
+      "failure_rate": 0.05714285714285714
+    },
+    "V": {
+      "total": 70,
+      "extracted": 62,
+      "failed": 8,
+      "failure_rate": 0.11428571428571428
+    },
+    "W": {
+      "total": 70,
+      "extracted": 57,
+      "failed": 13,
+      "failure_rate": 0.18571428571428572
+    },
+    "X": {
+      "total": 70,
+      "extracted": 38,
+      "failed": 32,
+      "failure_rate": 0.45714285714285713
+    },
+    "Y": {
+      "total": 70,
+      "extracted": 38,
+      "failed": 32,
+      "failure_rate": 0.45714285714285713
+    },
+    "Z": {
+      "total": 70,
+      "extracted": 43,
+      "failed": 27,
+      "failure_rate": 0.38571428571428573
+    }
+  },
+  "feature_count": 91,
+  "deduplication": {
+    "removed_total": 1815,
+    "removed_by_source": {
+      "kaggle": 1815,
+      "mendeley": 0,
+      "webcam": 0
+    },
+    "cross_source_webcam_removed": 0,
+    "kept_in_domain": 1815,
+    "kept_webcam": 0
+  }
+}

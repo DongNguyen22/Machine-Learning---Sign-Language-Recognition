@@ -1,0 +1,9 @@
+true_label,predicted_label,count,percentage
+U,R,2,20.0
+O,F,1,100.0
+Q,P,1,100.0
+Z,D,1,14.285714285714286
+U,V,1,10.0
+V,R,1,10.0
+V,U,1,10.0
+R,A,1,9.090909090909092

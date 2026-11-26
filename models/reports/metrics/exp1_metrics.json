@@ -1,0 +1,13 @@
+{
+  "exp1_knn": {
+    "train_accuracy": 0.9260869565217391,
+    "val_accuracy": 0.8226950354609929,
+    "model_path": "D:\\asl-alphabet-recognition\\models\\production\\exp1_knn.joblib"
+  },
+  "exp1_mlp_base": {
+    "train_loss": 0.12221365422010422,
+    "val_loss": 0.5824371576309204,
+    "train_accuracy": 0.9739130139350891,
+    "val_accuracy": 0.8368794322013855
+  }
+}
