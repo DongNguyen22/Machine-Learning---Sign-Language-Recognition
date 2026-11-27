@@ -1,51 +1,44 @@
 import { useEffect, useState } from "react";
 import { Icon, type IconName } from "./Icon";
 import { RecognitionPage } from "./recognition/RecognitionPage";
+import {
+  getSignGuideEntry,
+  type SignGuideEntry,
+} from "./recognition/signDictionaryData";
 import { useModelLabels } from "./recognition/usePredictor";
-import { getSignInfo, SIGN_CATEGORIES, signImageUrl } from "./signInfo";
 const nav = [
   { id: "home", label: "Trang chủ" },
   { id: "recognition", label: "Nhận diện" },
   { id: "dictionary", label: "Từ điển" },
   { id: "about", label: "Giới thiệu" },
 ];
-function HandDrawing({ pose = "open" }: { pose?: string }) {
-  return (
-    <svg
-      className={`hand-drawing ${pose}`}
-      viewBox="0 0 150 160"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path
-        d={
-          pose === "fist"
-            ? "M48 138v-28c-20-17-19-40-8-40h8V47q0-15 12-12 9-13 20-3 14-5 20 7 16-2 16 13v49q0 22-16 36"
-            : pose === "one" || pose === "two"
-              ? `M48 138v-28C20 82 22 72 30 69q7-4 21 13V26q0-15 12-12 6 1 6 12v47${pose === "two" ? "V20q0-13 11-12 8 1 8 14v52" : "q16-12 20 3"}q17-10 22 5 16-1 16 14v10q0 25-16 33`
-              : "M48 138v-28 0C22 86 19 74 27 69q8-5 25 15V36q0-14 10-14t10 14v38-55q0-12 10-12t10 12v55-47q0-12 9-12t9 12v50-35q0-12 9-12t9 12v54q0 27-18 42"
-        }
-      />
-      <path d="M48 138h54M56 150h40M66 96q16-9 30 1" />
-      <circle cx="80" cy="100" r="3" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-/** Ảnh thật của ký hiệu (public/images/signs/<label>.png); thiếu ảnh thì dùng hình vẽ minh họa. */
-function SignImage({ label, pose }: { label: string; pose: string }) {
+function SignSampleThumbnail({
+  entry,
+  large = false,
+}: {
+  entry: SignGuideEntry;
+  large?: boolean;
+}) {
   const [failed, setFailed] = useState(false);
-  useEffect(() => setFailed(false), [label]);
-  if (failed) return <HandDrawing pose={pose} />;
+
+  useEffect(() => {
+    setFailed(false);
+  }, [entry.imageUrl]);
+
+  if (!entry.imageUrl || failed) {
+    return (
+      <div className="sign-missing-photo" role="img" aria-label={`Chưa có ảnh hướng dẫn cho ký hiệu ${entry.label}`}>
+        <Icon name="info" size={large ? 32 : 24} />
+        <span>Chưa có ảnh hướng dẫn</span>
+      </div>
+    );
+  }
+
   return (
     <img
-      className="sign-photo"
-      src={signImageUrl(label)}
-      alt={`Ký hiệu ASL chữ ${label}`}
+      src={entry.imageUrl}
+      alt={`Ảnh mẫu dữ liệu huấn luyện cho ký hiệu ${entry.label} (${entry.sourceFilename})`}
+      className={large ? "modal-sign-photo" : "sign-card-photo"}
       loading="lazy"
       onError={() => setFailed(true)}
     />
@@ -59,12 +52,7 @@ export default function App() {
   const [toast, setToast] = useState("");
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("Tất cả");
-  const [selectedSign, setSelectedSign] = useState<{
-    label: string;
-    category: string;
-    description: string;
-    pose: string;
-  } | null>(null);
+  const [selectedSign, setSelectedSign] = useState<SignGuideEntry | null>(null);
   const [help, setHelp] = useState(false);
   useEffect(() => {
     if (!help && !selectedSign) return;
@@ -108,12 +96,19 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const { labels, error: labelsError } = useModelLabels();
-  const signs = labels.map((label) => ({ label, ...getSignInfo(label) }));
-  const filtered = signs.filter(
-    (s) =>
-      (category === "Tất cả" || s.category === category) &&
-      s.label.toLocaleLowerCase("vi").includes(search.toLocaleLowerCase("vi")),
-  );
+  const signs: SignGuideEntry[] = labels.map((label) => getSignGuideEntry(label));
+  const filtered = signs.filter((s) => {
+    const matchesCategory =
+      category === "Tất cả" || category === "Model" || s.category === category;
+    if (!matchesCategory) return false;
+    const q = search.trim().toLocaleLowerCase("vi");
+    if (!q) return true;
+    return (
+      s.label.toLocaleLowerCase("vi").includes(q) ||
+      s.shortSummary.toLocaleLowerCase("vi").includes(q) ||
+      s.handPosture.toLocaleLowerCase("vi").includes(q)
+    );
+  });
   return (
     <div className={`app ${dark ? "dark" : ""}`}>
       <header className="navbar">
@@ -305,14 +300,14 @@ export default function App() {
             <Icon name="info" size={19} />
             <p>
               {labelsError ||
-                "Danh sách được đọc trực tiếp từ labels.json của model. Bấm vào thẻ để xem cách tạo dáng tay."}
+                "Danh sách 36 lớp đọc trực tiếp từ labels.json. Mỗi thẻ hiển thị ảnh mẫu thực tế từ bộ dữ liệu ASL-HG (Mendeley Data, DOI: 10.17632/j4y5w2c8w9.1) để bạn quan sát tư thế tay và hướng bàn tay khi thử trước webcam (ảnh mẫu tĩnh, bấm vào thẻ để xem hướng dẫn chi tiết)."}
             </p>
           </div>
           <div className="dictionary-filters">
             <label className="search-field">
               <Icon name="search" />
               <input
-                placeholder="Tìm kiếm ký hiệu…"
+                placeholder="Tìm theo ký hiệu (0–9, A–Z) hoặc tư thế ngón tay…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 aria-label="Tìm kiếm ký hiệu"
@@ -324,7 +319,7 @@ export default function App() {
               )}
             </label>
             <div className="category-filters">
-              {SIGN_CATEGORIES.map((c) => (
+              {["Tất cả", "Chữ số (0–9)", "Chữ cái (A–Z)"].map((c) => (
                 <button
                   className={category === c ? "active" : ""}
                   aria-pressed={category === c}
@@ -344,15 +339,20 @@ export default function App() {
                 onClick={() => setSelectedSign(sign)}
               >
                 <div className="sign-illustration">
-                  <SignImage label={sign.label} pose={sign.pose} />
+                  <SignSampleThumbnail entry={sign} />
+                  {sign.hasMotionOrSpecialLimit && (
+                    <span className="sign-motion-badge" title="Có lưu ý về khung hình tĩnh trong dữ liệu huấn luyện">
+                      Ảnh tĩnh
+                    </span>
+                  )}
                   <span className="sign-arrow">
                     <Icon name="arrow" size={18} />
                   </span>
                 </div>
                 <div className="sign-card-copy">
                   <span className="sign-category">{sign.category}</span>
-                  <h2>{sign.label}</h2>
-                  <p>{sign.description}</p>
+                  <h2>Ký hiệu {sign.label}</h2>
+                  <p>{sign.shortSummary}</p>
                 </div>
               </button>
             ))}
@@ -533,15 +533,41 @@ export default function App() {
             {selectedSign ? (
               <>
                 <div className="modal-sign">
-                  <SignImage label={selectedSign.label} pose={selectedSign.pose} />
+                  <SignSampleThumbnail entry={selectedSign} large />
                 </div>
-                <span className="sign-category">{selectedSign.category}</span>
-                <h2>{selectedSign.label}</h2>
-                <p>{selectedSign.description}</p>
-                <p className="modal-note">
-                  Hình minh họa tham khảo bảng chữ cái ASL (American Sign Language). Đặt bàn tay
-                  rõ trong khung hình camera để model nhận diện tốt nhất.
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
+                    marginBottom: "0.35rem",
+                  }}
+                >
+                  <span className="sign-category">{selectedSign.category}</span>
+                  <span className="modal-source-tag">
+                    Ảnh mẫu huấn luyện: {selectedSign.sourceFilename}
+                  </span>
+                </div>
+                <h2>Ký hiệu {selectedSign.label}</h2>
+                <p style={{ fontWeight: 500, marginBottom: "0.75rem" }}>
+                  {selectedSign.shortSummary}
                 </p>
+                <div className="modal-guide-box">
+                  <div className="modal-guide-item">
+                    <strong>1. Tư thế bàn tay & các ngón tay:</strong>
+                    <p>{selectedSign.handPosture}</p>
+                  </div>
+                  <div className="modal-guide-item">
+                    <strong>2. Hướng lòng bàn tay & góc nhìn camera:</strong>
+                    <p>{selectedSign.palmAndCameraView}</p>
+                  </div>
+                  <div className="modal-guide-item">
+                    <strong>3. Nguồn ảnh mẫu & giới hạn nhận diện:</strong>
+                    <p>{selectedSign.motionAndDatasetNote}</p>
+                  </div>
+                </div>
                 <button
                   className="button"
                   onClick={() => {
@@ -549,7 +575,7 @@ export default function App() {
                     navigate("recognition");
                   }}
                 >
-                  Thử với camera
+                  Thử ký hiệu {selectedSign.label} với camera
                   <Icon name="arrow" size={17} />
                 </button>
               </>
