@@ -300,7 +300,7 @@ export default function App() {
             <Icon name="info" size={19} />
             <p>
               {labelsError ||
-                "Danh sách 36 lớp đọc trực tiếp từ labels.json của mô hình phân loại ảnh tĩnh. Mỗi thẻ hiển thị ảnh mẫu thực tế từ dữ liệu huấn luyện (asl_processed/train) để bạn quan sát tư thế tay và hướng lòng bàn tay khi thử trước webcam (đây là ảnh mẫu huấn luyện tĩnh, không phải giáo trình ASL chuẩn đầy đủ chuyển động)."}
+                "Danh sách 36 lớp đọc trực tiếp từ labels.json. Mỗi thẻ hiển thị ảnh mẫu thực tế từ bộ dữ liệu ASL-HG (Mendeley Data, DOI: 10.17632/j4y5w2c8w9.1) để bạn quan sát tư thế tay và hướng bàn tay khi thử trước webcam (ảnh mẫu tĩnh, bấm vào thẻ để xem hướng dẫn chi tiết)."}
             </p>
           </div>
           <div className="dictionary-filters">

@@ -1,0 +1,29 @@
+# ASL Alphabet (A-Z) — phụ thuộc Python cho pipeline MediaPipe + TensorFlow.
+# Cài đặt: pip install -r requirements.txt
+#
+# MediaPipe và TensorFlow tương thích ổn định với NumPy 1.26.x.
+# NumPy được ghim để tránh pip kéo NumPy 2.x không tương thích MediaPipe.
+
+mediapipe==0.10.21
+opencv-python>=4.10.0
+numpy==1.26.4
+pandas==2.2.3
+pyarrow==17.0.0
+scikit-learn>=1.5.2
+tensorflow==2.17.0
+keras==3.6.0
+protobuf==4.25.9
+ml-dtypes==0.4.1
+jax==0.4.30
+jaxlib==0.4.30
+onnx==1.16.1
+onnxruntime==1.19.2
+tf2onnx>=1.16.1
+customtkinter>=5.2.2
+pillow>=10.4.0
+pyyaml>=6.0.2
+matplotlib>=3.9.2
+seaborn>=0.13.2
+pytest>=8.3.3
+tqdm>=4.66.0
+joblib>=1.4.2

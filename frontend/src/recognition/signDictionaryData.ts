@@ -11,7 +11,7 @@ export type SignGuideEntry = {
 };
 
 const STANDARD_STATIC_NOTE =
-  "Ảnh mẫu trích từ dữ liệu huấn luyện (asl_processed/train) dùng cho mô hình phân loại ảnh tĩnh. Trong ảnh mẫu của dataset, phần lớn ký hiệu có ngón cái/cạnh ngoài nằm ở phía bên phải khung ảnh; đây là ảnh mẫu dữ liệu huấn luyện, không phải giáo trình ASL chuẩn.";
+  "Ảnh mẫu trích từ bộ dữ liệu ASL-HG (Mendeley Data, DOI: 10.17632/j4y5w2c8w9.1 — asl_processed/train) dùng cho mô hình phân loại ảnh tĩnh. Trong ảnh mẫu của dataset, phần lớn ký hiệu có ngón cái/cạnh ngoài nằm ở phía bên phải khung ảnh; đây là ảnh mẫu dữ liệu huấn luyện, không phải giáo trình ASL chuẩn.";
 
 export const SIGN_DICTIONARY_MAP: Record<string, SignGuideEntry> = {
   "0": {
