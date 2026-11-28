@@ -96,7 +96,10 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const { labels, error: labelsError } = useModelLabels();
-  const signs: SignGuideEntry[] = labels.map((label) => getSignGuideEntry(label));
+  // Từ điển chỉ hiển thị chữ cái A–Z; model vẫn giữ đủ lớp trong labels.json để nhận diện.
+  const signs: SignGuideEntry[] = labels
+    .map((label) => getSignGuideEntry(label))
+    .filter((s) => s.category === "Chữ cái (A–Z)");
   const filtered = signs.filter((s) => {
     const matchesCategory =
       category === "Tất cả" || category === "Model" || s.category === category;
@@ -294,20 +297,20 @@ export default function App() {
               </h1>
               <p>Khám phá những cử chỉ nhỏ mang ý nghĩa lớn.</p>
             </div>
-            <span className="dictionary-count">{labels.length} ký hiệu từ model</span>
+            <span className="dictionary-count">{signs.length} ký hiệu chữ cái</span>
           </div>
           <div className="dictionary-banner">
             <Icon name="info" size={19} />
             <p>
               {labelsError ||
-                "Danh sách 36 lớp đọc trực tiếp từ labels.json. Mỗi thẻ hiển thị ảnh mẫu thực tế từ bộ dữ liệu ASL-HG (Mendeley Data, DOI: 10.17632/j4y5w2c8w9.1) để bạn quan sát tư thế tay và hướng bàn tay khi thử trước webcam (ảnh mẫu tĩnh, bấm vào thẻ để xem hướng dẫn chi tiết)."}
+                "Danh sách 26 chữ cái A–Z đọc trực tiếp từ labels.json. Mỗi thẻ hiển thị ảnh mẫu thực tế từ bộ dữ liệu ASL-HG (Mendeley Data, DOI: 10.17632/j4y5w2c8w9.1) để bạn quan sát tư thế tay và hướng bàn tay khi thử trước webcam (ảnh mẫu tĩnh, bấm vào thẻ để xem hướng dẫn chi tiết)."}
             </p>
           </div>
           <div className="dictionary-filters">
             <label className="search-field">
               <Icon name="search" />
               <input
-                placeholder="Tìm theo ký hiệu (0–9, A–Z) hoặc tư thế ngón tay…"
+                placeholder="Tìm theo chữ cái (A–Z) hoặc tư thế ngón tay…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 aria-label="Tìm kiếm ký hiệu"
@@ -319,7 +322,7 @@ export default function App() {
               )}
             </label>
             <div className="category-filters">
-              {["Tất cả", "Chữ số (0–9)", "Chữ cái (A–Z)"].map((c) => (
+              {["Tất cả", "Chữ cái (A–Z)"].map((c) => (
                 <button
                   className={category === c ? "active" : ""}
                   aria-pressed={category === c}
